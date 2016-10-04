@@ -15,8 +15,41 @@ button, article, footer, small {
   background: transparent;
 }
 
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .header {
   height: 41px;
   background-color: #ffff64;
-  
+}
+
+.header-nav {
+  position: relative;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.search-bar {
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 220px;
+  height: 25px;
+  position: absolute;
+  top: 8px;
+  left: 6px;
+}
+
+.session-list-actions {
+  float: right;
+  list-style: none;
+  vertical-align: middle;
+}
+
+.session-list-actions > li {
+  float: left;
 }

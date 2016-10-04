@@ -6,20 +6,25 @@
   "directories": {
     "doc": "docs"
   },
+  "engines": {
+    "node": "5.1.0",
+    "npm": "3.3.12"
+},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall":"./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jd479/DabGenius-2.git"
+    "url": "git+https://github.com/jd479/DabGenius.git"
   },
   "author": "Jeffrey Du",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jd479/DabGenius-2/issues"
+    "url": "https://github.com/jd479/DabGenius/issues"
   },
-  "homepage": "https://github.com/jd479/DabGenius-2#readme",
+  "homepage": "https://github.com/jd479/DabGenius#readme",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",

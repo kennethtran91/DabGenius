@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+gem :production do
+  gem 'newrelic_rpm'
+  gem 'rails_12factor'
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
