@@ -25,12 +25,12 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 * [Redux Structure][redux-structure]
 * [Sample State][sample-state]
 
-[wireframes]: wireframes
-[components]: component-hierarchy.md
-[redux-structure]: redux-structure.md
-[sample-state]: sample-state.md
-[api-endpoints]: api-endpoints.md
-[schema]: schema.md
+[wireframes]: docs/wireframes
+[components]: docs/component-hierarchy.md
+[redux-structure]: rdocs/edux-structure.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
 ## Implementation Timeline
 
