@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionAPI from './util/session_api_util';
+import configureStore from './store/store';
+// import { signup, login } from './actions/session_actions';
+import Root from './components/root';
 
-window.login = SessionAPI.login;
-window.signup = SessionAPI.signup;
 
 document.addEventListener('DOMContentLoaded', () => {
+  const store = configureStore();
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Dab Genius</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });

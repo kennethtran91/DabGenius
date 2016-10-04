@@ -92,7 +92,9 @@
           author: "Jimbo",
           body: "Hot diggity dog, this line is straight fire!",
           lyric: "Love is a drug, like the strongest stuff ever and, fuck it I'm on one, you feel me?",
-          score: 7
+          start_index: 10,
+          end_index: 34,
+          score: 7,
 
           comments: {
             1: {
