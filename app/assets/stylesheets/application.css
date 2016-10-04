@@ -34,22 +34,35 @@ button, article, footer, small {
 
 .search-bar {
   display: block;
-  float: left;
   box-sizing: border-box;
   background-color: #fff;
   width: 220px;
   height: 25px;
   position: absolute;
-  top: 8px;
-  left: 6px;
+  top: 10px;
+  left: 20px;
 }
 
 .session-list-actions {
-  float: right;
   list-style: none;
-  vertical-align: middle;
+  position: absolute;
+  right: 7%;
+  top: 2px;
 }
 
 .session-list-actions > li {
   float: left;
+  padding: 10px;
+}
+
+.wrapper {
+  position: fixed;
+  left: 50%
+}
+
+.wrapper .logo {
+  position: relative;
+  left: -50%;
+  top: 13px;
+  
 }
