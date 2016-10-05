@@ -36,15 +36,15 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 
 ### Phase 1: Backend server and front end user authentication established (2 days)
 **Objective**: Rails server up and running with functioning front end authentication
-  - [ ] New rails project
-  - [ ] `User` model/controller
-  - [ ] `Session` controller
-  - [ ] Backend authentication
-  - [ ] `StaticPages` controller and root view
-  - [ ] Webpack and `React`/`Redux` modules
-  - [ ] `APIUtil` for API interaction
-  - [ ] Redux cycle established for front end authentication
-  - [ ] Account creation/sign in established
+  - [✓] New rails project
+  - [✓] `User` model/controller
+  - [✓] `Session` controller
+  - [✓] Backend authentication
+  - [✓] `StaticPages` controller and root view
+  - [✓] Webpack and `React`/`Redux` modules
+  - [✓] `APIUtil` for API interaction
+  - [✓] Redux cycle established for front end authentication
+  - [✓] Account creation/sign in established
   - [ ] OAuth with Facebook
   - [ ] Seed users
   - [ ] Review Phase 1

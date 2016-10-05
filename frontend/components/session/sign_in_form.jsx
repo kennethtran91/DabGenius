@@ -1,13 +1,50 @@
 import React from 'react';
 
 class SignInForm extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {username: "", password: ""};
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  updateUsername(e) {
+    this.setState({username: e.target.value});
+  }
+
+  updatePassword(e) {
+    this.setState({password: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = this.state;
+    this.props.login(user);
+    this.props.closeModal();
+  }
+
   render() {
     return (
-      <div>
-        <h2>Sign in!</h2>
-        <input type="text" placeholder="username..."></input>
-        <br></br>
-        <input type="password" placeholder="password..."></input>
+      <div className="session-form group">
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <h2 className="session-form-header">SIGN IN</h2>
+          <br></br>
+          <br></br>
+          <input onChange={this.updateUsername}
+            className="username-input"
+            type="text"
+            placeholder="username..."></input>
+          <br></br>
+          <input onChange={this.updatePassword}
+            className="password-input"
+            type="password"
+            placeholder="password..."></input>
+          <br></br>
+          <br></br>
+          <input className="session-submit" type="submit"/>
+
+        </form>
       </div>
     );
   }

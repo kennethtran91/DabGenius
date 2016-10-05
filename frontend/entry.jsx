@@ -7,7 +7,8 @@ import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
+  window.store=store;
   const root = document.getElementById('root');
-  Modal.setAppElement(Root);
+  Modal.setAppElement('#root');
   ReactDOM.render(<Root store={store}/>, root);
 });
