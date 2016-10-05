@@ -85,3 +85,12 @@ button, article, footer, small {
   font-size: 24px;
   letter-spacing: 3px;
 }
+
+button {
+  background-color: #ccc;
+  padding: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
