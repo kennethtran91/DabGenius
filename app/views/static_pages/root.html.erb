@@ -1,8 +1,13 @@
-<script type="text/javascript">
+<head>
+  <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render("api/users/user.json.jbuilder",
       user: current_user).html_safe %>
   <% end %>
-</script>
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+
+
 
 <main id="root"></main>

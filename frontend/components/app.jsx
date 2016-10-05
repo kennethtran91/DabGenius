@@ -1,11 +1,12 @@
 import React from 'react';
 import HeaderContainer from './header/header_container';
-import SessionModal from './modal/session_modal';
+import Homepage from './homepage/homepage';
 
 const App = ({children}) => (
   <div>
     <HeaderContainer/>
     {children}
+    <Homepage/>
   </div>
 );
 

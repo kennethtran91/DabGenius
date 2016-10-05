@@ -11,7 +11,7 @@ class Header extends React.Component {
     let alternate = null;
     if (this.props.currentUser) {
         alternate = (
-          <div>
+          <div className="right-side-content">
             <div className="user-greeting"> Welcome {this.props.currentUser.username}
             </div>
             <button className="logout-button"

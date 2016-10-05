@@ -12,9 +12,11 @@ export const login = (user, callback) => {
   };
 };
 
-export const logout = () => ({
-  type: LOGOUT
-});
+export const logout = () => {
+  return {
+    type: LOGOUT
+  };
+};
 
 export const signup = (user, callback) => {
   return {

@@ -74,17 +74,22 @@ button:hover {
 
 .right-side-content {
   float: right;
+    padding: 10px;
 }
 
-.session-modal-buttons {
-}
-
-.session-modal-buttons > button {
-  padding: 10px;
+.right-side-content .user-greeting {
+  float: left;
   margin: 10px;
 }
 
-.session-modal-buttons > button:last-child {
+.right-side-content .logout-button {
+  float: left;
+    margin: 10px;
+}
+
+.session-modal-buttons > button {
+
+  margin: 10px;
 }
 
 .modal-container {
@@ -101,8 +106,8 @@ button:hover {
   color: #ffff64;
   width: 300px;
   height: 400px;
-  position: absolute;
-  margin-left: 25%;
+  position: fixed;
+  margin: auto;
 }
 
 .session-form {
@@ -134,8 +139,13 @@ button:hover {
   left: 36%;
 }
 
-.header-nav .user-greeting {
-  position: absolute;
-  display: inline-block;
-  right: 10%;
+.homepage {
+  background-color: #000;
+}
+
+.about-container {
+  font-family: 'Quicksand', sans-serif;
+  border: 1px solid #ccc;
+  color: #aaa;
+  width: 200px;
 }
