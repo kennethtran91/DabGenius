@@ -22,11 +22,11 @@ button, article, footer, small {
 }
 
 .header {
-  height: 41px;
   background-color: #ffff64;
 }
 
 .header-nav {
+  text-align: center;
   position: relative;
   font-family: sans-serif;
   margin: 0 auto;
@@ -34,6 +34,10 @@ button, article, footer, small {
 
 .search-container {
   position: relative;
+  float: left;
+  margin-top: 13px;
+  margin-left: 10px;
+  text-align: left;
 }
 
 .search-bar {
@@ -41,11 +45,7 @@ button, article, footer, small {
   box-sizing: border-box;
   background-color: #fff;
   width: 220px;
-  height: 28px;
-  position: absolute;
-  top: 7px;
-  left: 20px;
-  padding-left: 8px;
+  padding: 5px 8px 5px 8px;
   border: 1px solid #eee;
 }
 
@@ -54,22 +54,17 @@ button, article, footer, small {
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 10px;
-  left: 211px;
+  top: 8px;
+  right: 5px;
 }
 
-.wrapper {
-  position: fixed;
-  left: 50%
-}
-
-.wrapper .logo {
-  position: relative;
-  left: -50%;
-  top: 7px;
+.logo {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 12px auto;
   text-shadow: -3px 2px #000;
   color: #ffff64;
-  font-size: 24px;
+  font-size: 30px;
   letter-spacing: 3px;
 }
 
@@ -77,21 +72,19 @@ button:hover {
   cursor: pointer;
 }
 
+.right-side-content {
+  float: right;
+}
+
 .session-modal-buttons {
-  position: relative;
 }
 
 .session-modal-buttons > button {
-  background-color: #ffff64;
   padding: 10px;
   margin: 10px;
-  position: absolute;
-  right: 10px;
-  bottom: -10px;
 }
 
 .session-modal-buttons > button:last-child {
-  right: 100px;
 }
 
 .modal-container {
@@ -124,7 +117,7 @@ button:hover {
 .session-form > input {
   position: absolute;
   text-align: center;
-  left: 18%;
+  left: 15%;
   margin: 10px 0px;
   border: 1px solid #ccc;
 }
@@ -139,4 +132,10 @@ button:hover {
   padding: 10px;
   margin-top: 25px;
   left: 36%;
+}
+
+.header-nav .user-greeting {
+  position: absolute;
+  display: inline-block;
+  right: 10%;
 }

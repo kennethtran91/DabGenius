@@ -5,7 +5,6 @@ import SignInFormContainer from '../session/sign_in_form_container';
 import SignUpFormContainer from '../session/sign_up_form_container';
 import ModalStyle from './modal_style';
 
-
 class SessionModal extends React.Component {
   constructor(props) {
     super(props);
@@ -34,9 +33,10 @@ class SessionModal extends React.Component {
 
   render() {
 
-    const formType = this.state.isSignIn ? <SignInFormContainer closeModal={this.closeModal}/> : <SignUpFormContainer closeModal={this.closeModal}/>;
+  const formType = this.state.isSignIn ? <SignInFormContainer closeModal={this.closeModal}/> : <SignUpFormContainer closeModal={this.closeModal}/>;
+
     return (
-      <div>
+      <div className="right-side-content">
         <div className="session-modal-buttons group">
           <button className="sign-in-button"
             onClick={() => this.openModal(true)}>

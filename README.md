@@ -45,14 +45,14 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] `APIUtil` for API interaction
   - [✓] Redux cycle established for front end authentication
   - [✓] Account creation/sign in established
-  - [ ] OAuth with Facebook
-  - [ ] Seed users
+  - [ ] OAuth with Facebook (move to later date)
+  - [✓] Seed users
   - [ ] Review Phase 1
 
 ### Phase 2: Create header/navigation and footer bars, homepage styling (1 day)
 **Objective**: Begin designing homepage layout with navigation bar and page coloring
-  - [ ] Navigation bar
-  - [ ] Logo
+  - [✓] Navigation bar
+  - [✓] Logo
   - [ ] Add search bar
   - [ ] Links in footer
   - [ ] About info
