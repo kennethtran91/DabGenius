@@ -19,11 +19,12 @@
 
 ### Songs
 
-  * `GET /api/songs`
-  * `POST /api/songs`
-  * `GET /api/songs/:id`
-  * `DELETE /api/songs/:id`
-  * `PATCH /api/songs/:id`
+  * `GET /api/songs` - index
+  * `POST /api/songs` - create
+  * `GET /api/songs/:id/edit` - edit
+  * `GET /api/songs/:id` - show
+  * `PATCH /api/songs/:id` - update
+  * `DELETE /api/songs/:id` - destroy
 
 ### Annotations
 

@@ -46,22 +46,22 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Redux cycle established for front end authentication
   - [✓] Account creation/sign in established
   - [ ] OAuth with Facebook (move to later date)
-  - [✓] Seed users
+  - [✓] Seed users (3)
   - [ ] Review Phase 1
 
 ### Phase 2: Create header/navigation and footer bars, homepage styling (1 day)
 **Objective**: Begin designing homepage layout with navigation bar and page coloring
   - [✓] Navigation bar
   - [✓] Logo
-  - [ ] Add search bar
+  - [✓] Add search bar (currently non-functional)
   - [ ] Links in footer
   - [ ] About info
   - [ ] Review phase 2
 
 ### Phase 3: Songs (1.5 days)
 **Objective**: Add songs to the database.
-  - [ ] `Song` model/controller
-  - [ ] Seed songs
+  - [✓] `Song` model/controller
+  - [✓] Seed songs (3)
   - [ ] Song form
   - [ ] File upload
   - [ ] Styling
