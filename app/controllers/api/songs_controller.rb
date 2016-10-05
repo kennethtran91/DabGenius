@@ -7,6 +7,12 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
+  def new
+    @song = Song.new
+
+    render :new
+  end
+
   def create
     @song = Song.new(song_params)
 
