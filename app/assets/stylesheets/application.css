@@ -32,21 +32,37 @@ button, article, footer, small {
   margin: 0 auto;
 }
 
+.search-container {
+  position: relative;
+}
+
 .search-bar {
   display: block;
   box-sizing: border-box;
   background-color: #fff;
   width: 220px;
-  height: 25px;
+  height: 28px;
+  position: absolute;
+  top: 7px;
+  left: 20px;
+  padding-left: 8px;
+  border: 1px solid #eee;
+}
+
+.mag-glass {
+  display: block;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 211px;
 }
+
 
 .session-list-actions {
   list-style: none;
   position: absolute;
-  right: 7%;
+  right: 6%;
   top: 2px;
 }
 
@@ -63,6 +79,9 @@ button, article, footer, small {
 .wrapper .logo {
   position: relative;
   left: -50%;
-  top: 13px;
-  
+  top: 7px;
+  text-shadow: -3px 2px #000;
+  color: #ffff64;
+  font-size: 24px;
+  letter-spacing: 3px;
 }

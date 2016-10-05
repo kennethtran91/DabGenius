@@ -6,7 +6,10 @@ const Header = (loggedIn) => {
 
     <header className="header">
       <nav className="header-nav group">
-        <input className="search-bar" type="text" placeholder="Search for a song..."></input>
+        <div className="search-container">
+          <input className="search-bar" type="text" placeholder="Search for a song..."></input>
+          <img src="http://simpleicon.com/wp-content/uploads/active-search.png" className="mag-glass"></img>
+        </div>
         <div className="wrapper">
           <div className="logo">DAB GENIUS</div>
         </div>
