@@ -7,7 +7,6 @@ const App = ({children}) => (
   <div>
     <HeaderContainer/>
     {children}
-    <Homepage/>
     <Footer/>
   </div>
 );

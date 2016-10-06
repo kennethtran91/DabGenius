@@ -4,13 +4,21 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+.right-column {
+  float: right;
+}
+
 .about-container {
   border: 1px solid #ccc;
   color: #aaa;
   width: 200px;
-  float: right;
+  // float: right;
   padding: 10px;
   margin: 10px;
+}
+
+.left-column {
+  float: left;
 }
 
 .song-index-item {
@@ -19,7 +27,7 @@
 }
 
 .song-index-item-img {
-  filter: brightness(30%);
+  filter: brightness(25%);
   width: 400px;
 }
 
@@ -27,4 +35,16 @@
   float: left;
   position: absolute;
   z-index: 1;
+  margin-left: 2%;
+}
+
+.add-song-link-container {
+  position: absolute;
+  left: 50%;
+}
+
+.add-song-link {
+  position: relative;
+  right: 50%;
+  white-space: nowrap;
 }

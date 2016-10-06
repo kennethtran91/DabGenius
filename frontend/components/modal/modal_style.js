@@ -6,6 +6,7 @@ const ModalStyle = {
     right           : 0,
     bottom          : 0,
     backgroundColor : 'rgba(0, 0, 0, 0.75)',
+    zIndex          : 10
 
 
   },
@@ -18,6 +19,7 @@ const ModalStyle = {
     border          : '1px solid #ccc',
     padding         : '20px',
     borderRadius    : '3px',
+    zIndex          : 11
   }
 };
 

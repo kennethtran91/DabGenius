@@ -1,5 +1,6 @@
 import React from 'react';
 import SessionModal from '../modal/session_modal';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
   constructor(props) {
@@ -7,9 +8,9 @@ class Header extends React.Component {
   }
 
   render () {
-    let alternate = null;
+    let greeting = null;
     if (this.props.currentUser) {
-        alternate = (
+        greeting = (
           <div className="right-side-content">
             <div className="user-greeting"> Welcome {this.props.currentUser.username}
             </div>
@@ -19,7 +20,7 @@ class Header extends React.Component {
           </div>);
     }
 
-    let action = alternate || <SessionModal/>;
+    let action = greeting || <SessionModal/>;
 
     return (
       <header className="header">
@@ -29,7 +30,7 @@ class Header extends React.Component {
             <img src="http://simpleicon.com/wp-content/uploads/active-search.png" className="mag-glass"></img>
           </div>
           <div className="header-logo-container">
-            <h1 className="logo">DAB GENIUS</h1>
+            <Link to="/" className="logo">DAB GENIUS</Link>
           </div>
           {action}
         </nav>

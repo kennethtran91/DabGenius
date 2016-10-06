@@ -1,0 +1,26 @@
+.new-song-form-container {
+  background-color: #000;
+  color: #aaa;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.new-song-form {
+  padding: 10px 20px;
+}
+
+.new-song-header {
+  color: #fff;
+  font-size: 24px;
+}
+
+.new-song-form-input {
+  background-color: #fff;
+  padding: 5px;
+  width: 450px;
+  border-radius: 3px;
+}
+
+textarea.new-song-form-input {
+  height: 800px;
+}

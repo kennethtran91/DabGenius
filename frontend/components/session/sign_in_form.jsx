@@ -34,12 +34,12 @@ class SignInForm extends React.Component{
           <div className="session-form-input-container">
 
             <input onChange={this.updateUsername}
-              className="username-input"
+              className="session-input"
               type="text"
               placeholder="username..."></input>
             <br></br>
             <input onChange={this.updatePassword}
-              className="password-input"
+              className="session-input"
               type="password"
               placeholder="password..."></input>
           </div>
