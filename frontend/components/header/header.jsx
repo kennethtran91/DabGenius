@@ -29,7 +29,9 @@ class Header extends React.Component {
             <input className="search-bar" type="text" placeholder="Search for a song..."></input>
             <img src="http://simpleicon.com/wp-content/uploads/active-search.png" className="mag-glass"></img>
           </div>
-          <h1 className="logo">DAB GENIUS</h1>
+          <div className="header-logo-container">
+            <h1 className="logo">DAB GENIUS</h1>
+          </div>
           {action}
         </nav>
       </header>

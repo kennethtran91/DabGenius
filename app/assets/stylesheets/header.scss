@@ -1,0 +1,51 @@
+.header {
+  background-color: #ffff64;
+}
+
+.header-nav {
+  text-align: center;
+  position: relative;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.search-container {
+  position: relative;
+  float: left;
+  margin-top: 13px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.search-bar {
+  display: block;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 220px;
+  padding: 5px 8px 5px 8px;
+  border: 1px solid #eee;
+}
+
+.mag-glass {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+.header-logo-container {
+  position: absolute;
+  left: 50%;
+}
+
+.logo {
+  text-shadow: -3px 2px #000;
+  color: #ffff64;
+  font-size: 30px;
+  letter-spacing: 3px;
+  position: relative;
+  right: 50%;
+  margin-top: 10px;
+}

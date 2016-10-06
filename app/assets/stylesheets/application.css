@@ -1,3 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
 html, body, header, nav, h1, a, ul, li,
 strong, main, section, img, div, h2, p,
 form, fieldset, label, input, textarea,
@@ -15,57 +31,14 @@ button, article, footer, small {
   background: transparent;
 }
 
+ul {
+  list-style: none;
+}
+
 .group:after {
   content: "";
   clear: both;
   display: block;
-}
-
-.header {
-  background-color: #ffff64;
-}
-
-.header-nav {
-  text-align: center;
-  position: relative;
-  font-family: sans-serif;
-  margin: 0 auto;
-}
-
-.search-container {
-  position: relative;
-  float: left;
-  margin-top: 13px;
-  margin-left: 10px;
-  text-align: left;
-}
-
-.search-bar {
-  display: block;
-  box-sizing: border-box;
-  background-color: #fff;
-  width: 220px;
-  padding: 5px 8px 5px 8px;
-  border: 1px solid #eee;
-}
-
-.mag-glass {
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 8px;
-  right: 5px;
-}
-
-.logo {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 12px auto;
-  text-shadow: -3px 2px #000;
-  color: #ffff64;
-  font-size: 30px;
-  letter-spacing: 3px;
 }
 
 button:hover {
@@ -90,62 +63,4 @@ button:hover {
 .session-modal-buttons > button {
 
   margin: 10px;
-}
-
-.modal-container {
-  position: relative;
-}
-
-.modal-x {
-  color: #ccc;
-}
-
-.modal-body {
-  font-family: sans-serif;
-  background-color: #292929;
-  color: #ffff64;
-  width: 300px;
-  height: 400px;
-  position: fixed;
-  margin: auto;
-}
-
-.session-form {
-  position: relative;
-}
-
-.session-form-header {
-  position: absolute;
-  left: 37%;
-}
-
-.session-form > input {
-  position: absolute;
-  text-align: center;
-  left: 15%;
-  margin: 10px 0px;
-  border: 1px solid #ccc;
-}
-
-.session-form .password-input {
-  margin-top: 25px;
-}
-
-.session-form .session-submit {
-  background-color: #aaa;
-  position: absolute;
-  padding: 10px;
-  margin-top: 25px;
-  left: 36%;
-}
-
-.homepage {
-  background-color: #000;
-}
-
-.about-container {
-  font-family: 'Quicksand', sans-serif;
-  border: 1px solid #ccc;
-  color: #aaa;
-  width: 200px;
 }
