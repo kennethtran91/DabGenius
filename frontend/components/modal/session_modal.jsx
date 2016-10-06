@@ -11,6 +11,7 @@ class SessionModal extends React.Component {
     this.state = { modalOpen: false, isSignIn: false };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onModalOpen = this.onModalOpen.bind(this);
   }
 
   openModal(bool) {
@@ -19,9 +20,7 @@ class SessionModal extends React.Component {
 
   closeModal() {
     this.setState({modalOpen: false});
-  }
-
-  componentDidMount() {
+    ModalStyle.content.opacity = 0;
 
   }
 
@@ -29,6 +28,10 @@ class SessionModal extends React.Component {
     if (nextProps.currentUser) {
       this.closeModal();
     }
+  }
+
+  onModalOpen() {
+    ModalStyle.content.opacity = 100;
   }
 
   render() {
@@ -51,7 +54,8 @@ class SessionModal extends React.Component {
           <Modal className="modal-body"
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}
-            style={ModalStyle}>
+            style={ModalStyle}
+            onAfterOpen={this.onModalOpen}>
             <button className="modal-x" onClick={this.closeModal}>x</button>
             {formType}
           </Modal>
