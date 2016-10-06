@@ -21,16 +21,28 @@ class SignUpForm extends React.Component{
     e.preventDefault();
     const user = this.state;
     this.props.signup(user);
-    this.props.closeModal();
+    if (this.props.currentUser) {
+      this.props.closeModal();
+    }
   }
 
   render() {
-    return (
 
+    let errors = null;
+    if (this.props.errors.length > 0) {
+      errors = this.props.errors.map((error, i) => {
+        return <li key={`error-${i}`}>{error}</li>;
+      });
+    }
+    
+    return (
       <div className="session-form group">
         <form className="session-form" onSubmit={this.handleSubmit}>
           <h2 className="session-form-header">SIGN UP</h2>
           <br></br>
+          <ul className="session-errors">
+            {errors}
+          </ul>
           <br></br>
           <div className="session-form-input-container">
             <input onChange={this.updateUsername}

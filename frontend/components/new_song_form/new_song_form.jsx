@@ -3,6 +3,7 @@ import React from 'react';
 class NewSongForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {artist: "", title: "", lyrics: ""};
   }
 
   render () {
@@ -10,6 +11,8 @@ class NewSongForm extends React.Component {
       <section className="new-song-form-container">
         <form className="new-song-form">
           <h2 className="new-song-header">Create a new song!</h2>
+          <h3>Primary info</h3>
+          <hr/>
           <label className="new-song-form-label">BY
             <br/>
             <input className="new-song-form-input"
@@ -27,6 +30,11 @@ class NewSongForm extends React.Component {
             <textarea className="new-song-form-input"
                       placeholder="Lyrics..."></textarea>
           </label>
+            <br/>
+
+          <label> Upload an image for the song: 
+          </label>
+          <input type="submit"/>
         </form>
       </section>
     );

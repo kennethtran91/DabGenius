@@ -7,6 +7,8 @@
 
 .new-song-form {
   padding: 10px 20px;
+
+  position: relative;
 }
 
 .new-song-header {
@@ -23,4 +25,12 @@
 
 textarea.new-song-form-input {
   height: 800px;
+}
+
+.new-song-form input[type="submit"] {
+  background-color: #262626;
+  color: #ccc;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
