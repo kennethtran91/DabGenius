@@ -6,6 +6,17 @@ class NewSongForm extends React.Component {
     this.state = {artist: "", title: "", lyrics: "", imageFile: null, imageUrl: null};
   }
 
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   render () {
     return (
       <section className="new-song-form-container">
@@ -33,7 +44,9 @@ class NewSongForm extends React.Component {
             <br/>
 
           <label> Upload an image for the song:
+            <input type="file" onChange={this.updateFile}/>
           </label>
+          <img src={this.state.imageUrl}/>
           <br/>
           <input type="submit"/>
         </form>

@@ -21,6 +21,8 @@ export const createSong = (song, success, error) => {
     url: '/api/songs',
     method: 'POST',
     data: {song: song},
+    contentType: false,
+    processData: false,
     success,
     error
   });
