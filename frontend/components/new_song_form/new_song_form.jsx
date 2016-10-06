@@ -3,7 +3,7 @@ import React from 'react';
 class NewSongForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {artist: "", title: "", lyrics: ""};
+    this.state = {artist: "", title: "", lyrics: "", imageFile: null, imageUrl: null};
   }
 
   render () {
@@ -32,8 +32,9 @@ class NewSongForm extends React.Component {
           </label>
             <br/>
 
-          <label> Upload an image for the song: 
+          <label> Upload an image for the song:
           </label>
+          <br/>
           <input type="submit"/>
         </form>
       </section>

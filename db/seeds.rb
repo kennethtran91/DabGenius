@@ -89,7 +89,7 @@ Chasing fame, chasing glory, 'til the day we make a story
 Positive that life ain't mine, bitch you can take that shit to Maury
 
 [Hook]",
-author_id: drizzy.id)
+author_id: drizzy.id, image: File.open('app/assets/images/logic-under-pressure.jpg'))
 
 Song.create!(artist: "Caveman", title: "Happy Birthday", lyrics: "Happy Birthday to You
 Happy Birthday to You
