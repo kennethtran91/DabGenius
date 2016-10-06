@@ -9,4 +9,22 @@
   color: #aaa;
   width: 200px;
   float: right;
+  padding: 10px;
+  margin: 10px;
+}
+
+.song-index-item {
+  display: block;
+  position: relative;
+}
+
+.song-index-item-img {
+  filter: brightness(30%);
+  width: 400px;
+}
+
+.song-index-item-caption {
+  float: left;
+  position: absolute;
+  z-index: 1;
 }

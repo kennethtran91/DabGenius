@@ -32,14 +32,14 @@
 
 .session-form-input-container {
   background-color: rgba(153,153,153,.09);
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 0px 5px;
   border: 2px solid #444;
   border-radius: 3px;
 }
 
 
-.session-form .username-input, .password-input {
+.session-form .username-input, .session-form .password-input {
   width: 275px;
   height: 35px;
   background-color: #292929;
