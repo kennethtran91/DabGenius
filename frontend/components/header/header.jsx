@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
 import SessionModal from '../modal/session_modal';
 
 class Header extends React.Component {

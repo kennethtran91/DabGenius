@@ -20,12 +20,13 @@
 
 .session-form {
   position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .session-form-header {
   position: absolute;
-  left: 25%;
-  font-size: 36px;
+  left: 27%;
+  font-size: 40px;
   top: -7%;
 }
 
@@ -46,8 +47,9 @@
   padding-left: 5px;
   color: #fff;
   margin: 10px 0px 10px 0px;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 3px;
+  text-align: center;
 }
 
 .session-form .session-submit {
@@ -60,4 +62,5 @@
   font-size: 13px;
   position: absolute;
   left: 36%;
+  bottom: 0%;
 }

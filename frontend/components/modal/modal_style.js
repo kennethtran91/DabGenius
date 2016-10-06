@@ -7,6 +7,7 @@ const ModalStyle = {
     bottom          : 0,
     backgroundColor : 'rgba(0, 0, 0, 0.75)',
 
+
   },
   content : {
     position        : 'fixed',
@@ -16,7 +17,7 @@ const ModalStyle = {
     bottom          : '100px',
     border          : '1px solid #ccc',
     padding         : '20px',
-
+    borderRadius    : '3px',
   }
 };
 
