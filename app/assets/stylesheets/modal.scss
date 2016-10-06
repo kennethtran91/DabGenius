@@ -1,9 +1,11 @@
 .modal-container {
   position: relative;
+
 }
 
 .modal-x {
   color: #ccc;
+  font-size: 24px;
 }
 
 .modal-body {
@@ -11,7 +13,7 @@
   background-color: #292929;
   color: #ffff64;
   width: 300px;
-  height: 400px;
+  height: 300px;
   position: fixed;
   margin: auto;
 }
@@ -22,25 +24,40 @@
 
 .session-form-header {
   position: absolute;
-  left: 37%;
+  left: 25%;
+  font-size: 36px;
+  top: -7%;
 }
 
-.session-form > input {
-  position: absolute;
-  text-align: left;
-  left: 20%;
-  margin: 10px 0px;
-  border: 1px solid #ccc;
+.session-form-input-container {
+  background-color: rgba(153,153,153,.09);
+  margin-top: 15px;
+  padding: 0px 5px;
+  border: 2px solid #444;
+  border-radius: 3px;
 }
 
-.session-form .password-input {
-  margin-top: 25px;
+
+.session-form .username-input, .password-input {
+  width: 275px;
+  height: 35px;
+  background-color: #292929;
+  border: 2px solid #444;
+  padding-left: 5px;
+  color: #fff;
+  margin: 10px 0px 10px 0px;
+  font-size: 12px;
+  border-radius: 3px;
 }
 
 .session-form .session-submit {
-  background-color: #aaa;
+  height: 25px;
+  background-color: #333;
+  border: 2px solid #aaa;
+  border-radius: 3px;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 13px;
   position: absolute;
-  padding: 10px;
-  margin-top: 25px;
   left: 36%;
 }

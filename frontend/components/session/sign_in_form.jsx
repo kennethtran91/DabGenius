@@ -31,15 +31,18 @@ class SignInForm extends React.Component{
           <h2 className="session-form-header">SIGN IN</h2>
           <br></br>
           <br></br>
-          <input onChange={this.updateUsername}
-            className="username-input"
-            type="text"
-            placeholder="username..."></input>
-          <br></br>
-          <input onChange={this.updatePassword}
-            className="password-input"
-            type="password"
-            placeholder="password..."></input>
+          <div className="session-form-input-container">
+
+            <input onChange={this.updateUsername}
+              className="username-input"
+              type="text"
+              placeholder="username..."></input>
+            <br></br>
+            <input onChange={this.updatePassword}
+              className="password-input"
+              type="password"
+              placeholder="password..."></input>
+          </div>
           <br></br>
           <br></br>
           <input className="session-submit" type="submit"/>
