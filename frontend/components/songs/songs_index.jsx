@@ -11,7 +11,6 @@ export default class SongsIndex extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <section className="song-index">
         <ul>
