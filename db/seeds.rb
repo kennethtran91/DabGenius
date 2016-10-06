@@ -95,7 +95,7 @@ Song.create!(artist: "Caveman", title: "Happy Birthday", lyrics: "Happy Birthday
 Happy Birthday to You
 Happy Birthday Dear (name)
 Happy Birthday to You.
-", author_id: superman.id)
+", author_id: superman.id, image: File.open('app/assets/images/jcole.jpg'))
 
 Song.create!(artist: "Desiigner", title: "Panda", lyrics: "[Spoken:]
 This what they all been waitin' for.
