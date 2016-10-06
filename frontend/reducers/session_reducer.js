@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const defaultState = { currentUser: null, errors: [] };
 
-export const SessionReducer = (state = defaultState, action) => {
+const SessionReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       let newState = {currentUser: action.currentUser, errors: []};
@@ -16,6 +16,8 @@ export const SessionReducer = (state = defaultState, action) => {
       return merge({}, state, defaultState);
 
     default:
-      return defaultState;
+      return state;
   }
 };
+
+export default SessionReducer;
