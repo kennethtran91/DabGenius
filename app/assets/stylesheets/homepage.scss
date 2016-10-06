@@ -1,10 +1,12 @@
-.homepage {
+.homepage-container {
   background-color: #000;
+  color: #aaa;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .about-container {
-  font-family: 'Quicksand', sans-serif;
   border: 1px solid #ccc;
   color: #aaa;
   width: 200px;
+  float: right;
 }

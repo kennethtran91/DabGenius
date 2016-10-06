@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'paperclip', '5.0.0.beta1'
+gem 'aws-sdk'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

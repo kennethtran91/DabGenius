@@ -2,7 +2,7 @@ import { RECEIVE_ALL_SONGS, RECEIVE_ONE_SONG } from '../actions/song_actions';
 import { RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
-const defaultState = { songs: {}, errors: []};
+const defaultState = { songs: [], errors: []};
 
 const SongsReducer = (state=defaultState, action) => {
   switch(action.type) {
