@@ -1,3 +1,61 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.song-detail-container {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.song-banner {
+  height: 340px;
+  position: relative;
+}
+
+.zoomed-banner {
+  // background-size: cover;
+  // height: inherit;
+  // overflow: hidden;
+  object-fit: cover;
+  height: inherit;
+  filter: brightness(30%);
+}
+
+.banner-info {
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  letter-spacing: 5px;
+}
+
+.banner-info .song-title {
+  color: #ffff64;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner-info .song-artist {
+  color: #fff;
+  font-size: 24px;
+}
+
+.pro-pic {
+  width: 328px;
+  border: 3px solid #fff;
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+}
+
+.lyrics-container {
+  width: 570px;
+  margin-left: 10%;
+}
+
+.lyrics-header {
+  text-transform: uppercase;
+  color: #9a9a9a;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.lyrics-text {
+  width: 570px;
+  font-size: 24px;
+  white-space: pre;
+}
