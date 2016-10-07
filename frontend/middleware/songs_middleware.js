@@ -6,7 +6,7 @@ import * as API from '../util/song_api_util';
 const SongsMiddleware = ({ getState, dispatch }) => next => action => {
   let successCallback;
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
-
+  // debugger
   switch(action.type) {
     case REQUEST_ALL_SONGS:
       successCallback = (songs) => dispatch(receiveAllSongs(songs));

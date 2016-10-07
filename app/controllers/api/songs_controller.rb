@@ -14,7 +14,7 @@ class Api::SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = current_user.songs.new(song_params)
 
     if @song.save
       render :show
@@ -52,12 +52,12 @@ class Api::SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:artist, :title, :lyrics, :author_id, :image)
+    params.require(:song).permit(:artist, :title, :lyrics, :image)
   end
 
   def require_author
     @song = Song.find(params[:id])
-    if @song.author_id == current_user.id
+    if @song.author.id == current_user.id
       render 'api/songs/edit'
     else
       render json: "Forbidden", status: :forbidden

@@ -20,7 +20,7 @@ export const createSong = (song, success, error) => {
   $.ajax({
     url: '/api/songs',
     method: 'POST',
-    data: {song: song},
+    data: song,
     dataType: "json",
     contentType: false,
     processData: false,

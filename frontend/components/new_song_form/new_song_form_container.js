@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import NewSongForm from './new_song_form';
 
 const mapStateToProps = (state) => {
-  debugger
+
   return {
-    currentUser: state.session.currentUser,
     errors: state.session.errors
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     createSong: (song, callback) => dispatch(createSong(song, callback))
   };

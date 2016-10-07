@@ -1,10 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import ReactDOM from 'react-dom';
 
 class NewSongForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {artist: "", title: "", lyrics: "", imageFile: null, imageUrl: null};
+    this.state = {artist: "", title: "", lyrics: "",
+      imageFile: null, imageUrl: null};
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -30,13 +32,17 @@ class NewSongForm extends React.Component {
     return e => this.setState({[property]: e.target.value});
   }
 
+  componentDidMount() {
+    setTimeout(() => ReactDOM.findDOMNode(this.refs.artistInput).focus(), 0);
+  }
+
   handleSubmit(e) {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("song[artist]", this.state.artist);
     formData.append("song[title]", this.state.title);
     formData.append("song[lyrics]", this.state.lyrics);
     formData.append("song[image]", this.state.imageFile);
-    debugger //doesnt hit mapstate or mapdispatch
     this.props.createSong(formData, this.returnToHome);
   }
 
@@ -61,6 +67,7 @@ class NewSongForm extends React.Component {
           <label className="new-song-form-label">BY
             <br/>
             <input onChange={this.update("artist")}
+                    ref="artistInput"
                     className="new-song-form-input"
                     placeholder="Artist name"></input>
           </label>
