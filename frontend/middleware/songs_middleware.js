@@ -1,5 +1,5 @@
 import { REQUEST_ALL_SONGS, REQUEST_ONE_SONG, CREATE_SONG,
-receiveAllSongs, receiveOneSong } from '../actions/song_actions';
+receiveAllSongs, receiveOneSong, addNewSong } from '../actions/song_actions';
 import { receiveErrors } from '../actions/session_actions';
 import * as API from '../util/song_api_util';
 
@@ -19,7 +19,7 @@ const SongsMiddleware = ({ getState, dispatch }) => next => action => {
 
     case CREATE_SONG:
       successCallback = (song) => {
-        dispatch(receiveOneSong(song));
+        dispatch(addNewSong(song));
         action.callback();
       };
       API.createSong(action.song, successCallback, errorCallback);

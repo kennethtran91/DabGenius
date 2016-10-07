@@ -5,7 +5,7 @@ import { requestOneSong } from '../../actions/song_actions';
 const mapStateToProps = ( state ) => {
   return {
     currentUser: state.session.currentUser,
-    song: state.songs.songs[0]
+    song: state.songs.songDetail
   };
 };
 

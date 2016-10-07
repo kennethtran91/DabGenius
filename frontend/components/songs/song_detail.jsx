@@ -6,17 +6,24 @@ class SongDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestOneSong();
+    this.props.requestOneSong(this.props.params.songId);
   }
 
   render() {
-    return (
-      <section className="song-detail-container">
-        <div className="song-banner">
 
-        </div>
-      </section>
-    );
+    if (this.props.song) {
+      return (
+        <section className="song-detail-container">
+          <div className="song-banner">
+            <img className="zoomed-banner" src={this.props.song.image_url}></img>
+          </div>
+        </section>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 }
 

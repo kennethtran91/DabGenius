@@ -16,9 +16,6 @@ const Root = ({ store }) => {
     }
   }
 
-  const requestSingleSongOnEnter = (nextState) => {
-    store.dispatch(SongActions.requestOneSong(nextState.params.songId))
-  }
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -30,9 +27,7 @@ const Root = ({ store }) => {
             onEnter={_redirectUnlessLoggedIn}></Route>
 
           <Route path="api/songs/:songId"
-            component={SongDetailContainer}
-            onEnter={requestSingleSongOnEnter}></Route>
-
+            component={SongDetailContainer}></Route>
         </Route>
       </Router>
     </Provider>
