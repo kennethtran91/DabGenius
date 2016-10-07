@@ -28,6 +28,10 @@
   border: 1px solid #eee;
 }
 
+.song-index-item:hover{
+  cursor: pointer;
+}
+
 .song-index-item-img {
   filter: brightness(25%);
   width: 400px;

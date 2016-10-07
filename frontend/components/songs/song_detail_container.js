@@ -4,11 +4,12 @@ import { requestOneSong } from '../../actions/song_actions';
 
 const mapStateToProps = ( state ) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    song: state.songs.songs[0]
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     requestOneSong: (song) => dispatch(requestOneSong(song))
   };

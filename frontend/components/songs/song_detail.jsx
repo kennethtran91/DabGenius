@@ -5,11 +5,15 @@ class SongDetail extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestOneSong();
+  }
+
   render() {
     return (
       <section className="song-detail-container">
         <div className="song-banner">
-          <img ></img>
+
         </div>
       </section>
     );
