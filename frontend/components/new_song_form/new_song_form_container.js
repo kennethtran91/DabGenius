@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import NewSongForm from './new_song_form';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     currentUser: state.session.currentUser,
     errors: state.session.errors

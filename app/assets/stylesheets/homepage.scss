@@ -19,12 +19,14 @@
 
 .left-column {
   float: left;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 .song-index-item {
   display: block;
   position: relative;
+  border: 1px solid #eee;
 }
 
 .song-index-item-img {

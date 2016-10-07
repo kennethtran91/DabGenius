@@ -6,7 +6,8 @@ class Homepage extends React.Component{
   constructor(props) {
     super(props);
   }
-
+  //maybe just do features and medium icons (like youtube thumbnails)
+  
   render() {
     return (
       <div className="homepage-container group">

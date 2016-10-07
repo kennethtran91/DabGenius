@@ -20,6 +20,6 @@ export default class SongsIndex extends React.Component {
         </ul>
 
       </section>
-    );
+    ); 
   }
 }

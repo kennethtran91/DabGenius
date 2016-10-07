@@ -54,16 +54,16 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Navigation bar
   - [✓] Logo
   - [✓] Add search bar (currently non-functional)
-  - [ ] Links in footer
-  - [ ] About info
+  - [✓] Links in footer (1)
+  - [✓] About info (need to develop)
   - [ ] Review phase 2
 
 ### Phase 3: Songs (1.5 days)
 **Objective**: Add songs to the database.
   - [✓] `Song` model/controller
   - [✓] Seed songs (3)
-  - [ ] Song form
-  - [ ] File upload
+  - [✓] Song form (currently nonfunctional)
+  - [✓] File upload
   - [ ] Styling
   - [ ] Review phase 3
 

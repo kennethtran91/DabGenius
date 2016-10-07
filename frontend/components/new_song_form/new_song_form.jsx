@@ -36,17 +36,28 @@ class NewSongForm extends React.Component {
     formData.append("song[title]", this.state.title);
     formData.append("song[lyrics]", this.state.lyrics);
     formData.append("song[image]", this.state.imageFile);
-    debugger
+    debugger //doesnt hit mapstate or mapdispatch
     this.props.createSong(formData, this.returnToHome);
   }
 
   render () {
+
+    let errors = null;
+    if (this.props.errors.length > 0) {
+      errors = this.props.errors.map((error, i) => {
+        return <li key={`error-${i}`}>{error}</li>;
+      });
+    }
+
     return (
       <section className="new-song-form-container">
         <form onSubmit={this.handleSubmit} className="new-song-form">
           <h2 className="new-song-header">Create a new song!</h2>
           <h3>Primary info (all fields required)</h3>
           <hr/>
+          <ul className="song-form-error">
+            {errors}
+          </ul>
           <label className="new-song-form-label">BY
             <br/>
             <input onChange={this.update("artist")}

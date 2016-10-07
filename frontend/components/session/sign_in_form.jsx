@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class SignInForm extends React.Component{
   constructor(props) {
@@ -26,6 +27,10 @@ class SignInForm extends React.Component{
     }
   }
 
+  componentDidMount() {
+    setTimeout(() => ReactDOM.findDOMNode(this.refs.usernameInput).focus(), 0);
+  }
+
   render() {
 
     let errors = null;
@@ -46,6 +51,7 @@ class SignInForm extends React.Component{
           <br></br>
           <div className="session-form-input-container">
             <input onChange={this.updateUsername}
+              ref = "usernameInput"
               className="session-input"
               type="text"
               placeholder="username..."></input>

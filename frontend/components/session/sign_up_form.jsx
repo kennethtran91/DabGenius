@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class SignUpForm extends React.Component{
   constructor(props) {
@@ -26,6 +27,10 @@ class SignUpForm extends React.Component{
     }
   }
 
+  componentDidMount() {
+    setTimeout(() => ReactDOM.findDOMNode(this.refs.usernameInput).focus(), 0);
+  }
+
   render() {
 
     let errors = null;
@@ -34,7 +39,7 @@ class SignUpForm extends React.Component{
         return <li key={`error-${i}`}>{error}</li>;
       });
     }
-    
+
     return (
       <div className="session-form group">
         <form className="session-form" onSubmit={this.handleSubmit}>
@@ -46,6 +51,7 @@ class SignUpForm extends React.Component{
           <br></br>
           <div className="session-form-input-container">
             <input onChange={this.updateUsername}
+              ref="usernameInput"
               className="session-input"
               type="text"
               placeholder="username..."></input>
