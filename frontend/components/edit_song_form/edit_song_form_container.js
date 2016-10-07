@@ -1,11 +1,12 @@
 import { createSong } from '../../actions/song_actions';
 import { connect } from 'react-redux';
-import NewSongForm from './new_song_form';
+import EditSongForm from './edit_song_form';
 
 const mapStateToProps = (state) => {
 
   return {
     errors: state.songs.errors,
+    currentSong: state.songs.songDetail
   };
 };
 
@@ -19,4 +20,9 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewSongForm);
+)(EditSongForm);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditSongForm);

@@ -32,8 +32,8 @@ export const createSong = (song, success, error) => {
 // export const editSong = (song, success, error) => {
 //   $.ajax({
 //     url: `/api/songs/${song.id}`,
-//     method: 'POST',
-//     data: {song: song},
+//     method: 'PATCH',
+//     data: song,
 //     success,
 //     error
 //   });

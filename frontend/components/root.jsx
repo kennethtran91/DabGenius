@@ -26,8 +26,12 @@ const Root = ({ store }) => {
             component={NewSongFormContainer}
             onEnter={_redirectUnlessLoggedIn}></Route>
 
+          <Route path="api/songs/:songId/edit"
+            component={EditSongFormContainer}></Route>
+
           <Route path="api/songs/:songId"
             component={SongDetailContainer}></Route>
+
         </Route>
       </Router>
     </Provider>

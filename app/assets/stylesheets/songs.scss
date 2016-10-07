@@ -8,9 +8,6 @@
 }
 
 .zoomed-banner {
-  // background-size: cover;
-  // height: inherit;
-  // overflow: hidden;
   object-fit: cover;
   height: inherit;
   filter: brightness(30%);
@@ -45,6 +42,12 @@
 .lyrics-container {
   width: 570px;
   margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+.song-edit-button {
+  margin-top: 10px;
+  color: #f00;
 }
 
 .lyrics-header {

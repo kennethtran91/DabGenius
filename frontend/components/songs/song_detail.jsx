@@ -3,19 +3,25 @@ import React from 'react';
 class SongDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.handleEditButton = this.handleEditButton.bind(this);
   }
 
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
   }
 
-  processLyrics() {
-
+  handleEditButton(e) {
+    e.preventDefault();
   }
+  // for annotations: window.getSelection().toString()
 
   render() {
 
     if (this.props.song) {
+      let edit = null;
+      if (this.props.currentUser && this.props.currentUser.id === this.props.song.author_id) {
+        edit = <button className="song-edit-button" onClick={this.handleEditButton}>Edit Song</button>;
+      }
       return (
         <section className="song-detail-container">
           <div className="song-banner">
@@ -32,6 +38,7 @@ class SongDetail extends React.Component {
           </div>
 
           <section className="lyrics-container">
+          {edit}
             <h3 className="lyrics-header">
               {this.props.song.title} lyrics
             </h3>
@@ -40,7 +47,7 @@ class SongDetail extends React.Component {
           </section>
         </section>
       );
-      
+
     } else {
       return (
         <div></div>

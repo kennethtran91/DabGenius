@@ -1,5 +1,5 @@
 class Annotation < ActiveRecord::Base
-  validates :author, :song, :start_index, :end_index presence: true
+  validates :author, :song, :start_index, :end_index, presence: true
 
   belongs_to :song,
     primary_key: :id,

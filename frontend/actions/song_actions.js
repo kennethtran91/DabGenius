@@ -4,6 +4,7 @@ export const REQUEST_ALL_SONGS = "REQUEST_ALL_SONGS";
 export const REQUEST_ONE_SONG = "REQUEST_ONE_SONG";
 export const CREATE_SONG = "CREATE_SONG";
 export const ADD_NEW_SONG = "ADD_NEW_SONG";
+// export const EDIT_SONG = "EDIT_SONG";
 
 export const receiveAllSongs = (songs) => ({
   type: RECEIVE_ALL_SONGS,
@@ -34,3 +35,8 @@ export const addNewSong = (song) => ({
   type: ADD_NEW_SONG,
   song
 });
+
+// export const editSong = (song) => ({
+//   type: EDIT_SONG,
+//   song
+// });
