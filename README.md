@@ -64,7 +64,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Seed songs (3)
   - [✓] Song form (currently nonfunctional)
   - [✓] File upload
-  - [ ] Styling
+  - [✓] Styling
   - [ ] Review phase 3
 
 ### Phase 4: Annotations (2 days)

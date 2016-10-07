@@ -9,6 +9,11 @@ class Song < ActiveRecord::Base
   belongs_to :author,
     foreign_key: :author_id,
     primary_key: :id,
-    class_name: "User"
+    class_name: 'User'
+
+  has_many :annotations,
+    foreign_key: :song_id,
+    primary_key: :id,
+    class_name: 'Annotation'
 
 end

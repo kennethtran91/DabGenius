@@ -11,15 +11,21 @@
 .about-container {
   border: 1px solid #ccc;
   color: #aaa;
-  width: 200px;
+  width: 400px;
+  height: 100px;
   padding: 10px;
-  margin: 10px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+.headphones {
+  width: 90px;
+  float: left;
 }
 
 .left-column {
   float: left;
   margin: 40px;
-
 }
 
 .song-index-item {

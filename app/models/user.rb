@@ -11,7 +11,12 @@ class User < ActiveRecord::Base
   has_many :songs,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: "Song"
+    class_name: 'Song'
+
+  has_many :annotations,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Annotation'
 
   def self.generate_session_token
 		SecureRandom.urlsafe_base64(16)
