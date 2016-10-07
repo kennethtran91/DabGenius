@@ -23,7 +23,8 @@ export const requestOneSong = (id) => ({
   id
 });
 
-export const createSong = (song) => ({
+export const createSong = (song, callback) => ({
   type: CREATE_SONG,
-  song
+  song,
+  callback
 });

@@ -19,7 +19,10 @@ const SongsMiddleware = ({ getState, dispatch }) => next => action => {
       return next(action);
 
     case CREATE_SONG:
-      successCallback = (song) => dispatch(receiveOneSong(song));
+      successCallback = (song) => {
+        dispatch(receiveOneSong(song));
+        action.callback();
+      };
       API.createSong(action.song, successCallback, errorCallback);
       return next(action);
 

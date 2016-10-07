@@ -2,7 +2,7 @@
   background-color: #000;
   color: #aaa;
   font-family: 'Quicksand', sans-serif;
-
+  position: relative;
 }
 
 .new-song-form {
@@ -21,6 +21,7 @@
   padding: 5px;
   width: 450px;
   border-radius: 3px;
+  color: #333;
 }
 
 textarea.new-song-form-input {
@@ -33,4 +34,11 @@ textarea.new-song-form-input {
   padding: 2px 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+
+.uploaded-image {
+  width: 450px;
+  position: absolute;
+  right: 5%;
+  bottom: 6%;
 }
