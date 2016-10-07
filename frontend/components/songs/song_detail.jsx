@@ -4,6 +4,7 @@ class SongDetail extends React.Component {
   constructor(props) {
     super(props);
     this.handleEditButton = this.handleEditButton.bind(this);
+    this.showAnnotationButton = this.showAnnotationButton.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +15,16 @@ class SongDetail extends React.Component {
     e.preventDefault();
   }
   // for annotations: window.getSelection().toString()
+
+  // printSelection(e) {
+  //   console.log(window.getSelection().toString());
+  // } // for testing
+
+  showAnnotationButton() {
+    return (
+      <button className="annotation-button">LKSDJFLKSDJFKLSDJFJSDFDSJKFLJSDF</button>
+    );
+  }
 
   render() {
 
@@ -42,7 +53,7 @@ class SongDetail extends React.Component {
             <h3 className="lyrics-header">
               {this.props.song.title} lyrics
             </h3>
-            <p className="lyrics-text">
+            <p onMouseUp={this.showAnnotationButton} className="lyrics-text">
               {this.props.song.lyrics}</p>
           </section>
         </section>
