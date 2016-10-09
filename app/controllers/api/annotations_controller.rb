@@ -17,6 +17,6 @@ class Api::AnnotationsController < ApplicationController
   end
 
   def annotation_params
-    params.require(:annotation).permit(:song, :start_index, :end_index)
+    params.require(:annotation).permit(:body, :song_id, :start_index, :end_index)
   end
 end

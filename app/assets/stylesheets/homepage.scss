@@ -36,6 +36,7 @@
 
 .song-index-item:hover{
   cursor: pointer;
+  filter: brightness(150%);
 }
 
 .song-index-item-img {
@@ -59,4 +60,8 @@
   position: relative;
   right: 50%;
   white-space: nowrap;
+}
+
+.add-song-link:hover {
+  color: cornflowerblue;
 }

@@ -1,1 +1,1 @@
-json.partial! "api/annotations/annotations", annotation: @annotation
+json.partial! "api/annotations/annotation", annotation: @annotation

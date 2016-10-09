@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 
 const defaultState = { songs: [], songDetail: null, errors: []};
 
-const SongsReducer = (state=defaultState, action) => {
+const SongsReducer = (state = defaultState, action) => {
   switch(action.type) {
 
     case RECEIVE_ALL_SONGS:

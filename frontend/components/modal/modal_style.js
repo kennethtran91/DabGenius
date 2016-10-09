@@ -21,7 +21,7 @@ const ModalStyle = {
     borderRadius    : '3px',
     zIndex          : 11,
     opacity         : '0',
-    transition      : 'opacity 1s'
+    transition      : 'opacity 0.5s'
   }
 };
 

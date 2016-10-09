@@ -10,9 +10,10 @@ User.destroy_all
 drizzy = User.create!(username: "drizzy", password: "rapgod")
 superman = User.create!(username: "superman", password: "rapgod")
 soulja = User.create!(username: "soulja boy", password: "rapgod")
+guest = User.create!(username: "guest", password: "rapgod")
 
 Song.destroy_all
-Song.create!(artist: "Logic", title: "Under Pressure", lyrics:
+under_pressure = Song.create!(artist: "Logic", title: "Under Pressure", lyrics:
 "[Hook:]
 Work so fucking much my greatest fear is I'mma die alone
 Every diamond in my chain, yeah, that's a milestone (Keep doing it, I'm loving it)
@@ -91,7 +92,7 @@ Positive that life ain't mine, bitch you can take that shit to Maury
 [Hook]",
 author_id: drizzy.id, image: File.open('app/assets/images/logic-under-pressure.jpg'))
 
-Song.create!(artist: "J. Cole", title: "Wet Dreamz", lyrics: "Cole, Cole world, yeah
+wet_dreamz = Song.create!(artist: "J. Cole", title: "Wet Dreamz", lyrics: "Cole, Cole world, yeah
 Let me take y'all back, man
 As I do so well
 
@@ -184,7 +185,7 @@ And I ain't never did this before, no
 And I ain't never did this before, no
 ", author_id: superman.id, image: File.open('app/assets/images/jcole.jpg'))
 
-Song.create!(artist: "Desiigner", title: "Panda", lyrics: "[Spoken:]
+panda = Song.create!(artist: "Desiigner", title: "Panda", lyrics: "[Spoken:]
 This what they all been waitin' for.
 I guess so.
 They been waitin' for this shit for a long time, didn’t they?
@@ -303,3 +304,8 @@ Hope you killers understand me
 
 Panda, panda, panda, panda, panda, panda, panda...
 ", author_id: soulja.id)
+
+Annotation.destroy_all
+
+anno1 =  Annotation.create!(song_id: panda.id, author_id: superman.id,
+start_index: 12, end_index: 28, body: 'wow this song is really stupid')
