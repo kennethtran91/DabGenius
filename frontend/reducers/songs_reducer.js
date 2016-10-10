@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_ONE_SONG, ADD_NEW_SONG } from '../actions/song_actions';
+import { ADD_NEW_ANNOTATION } from '../actions/annotation_actions';
 import { RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
@@ -18,6 +19,11 @@ const SongsReducer = (state = defaultState, action) => {
 
     case RECEIVE_ONE_SONG:
       return merge({}, state, {songDetail: action.song});
+
+    case ADD_NEW_ANNOTATION:
+      return merge({}, state, {
+        songDetail: {annotations: [...state.songDetail.annotations, action.annotation]}
+      })
 
     default:
       return state;

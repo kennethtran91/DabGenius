@@ -5,13 +5,15 @@ class SongDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showButton: false, startIndex: 0, endIndex: 0,
-    lyrics: "", selectedElement: null, annotationButtonPosition: null};
+    lyrics: "", selectedElement: null, annotationButtonPosition: null,
+    showList: false};
     this.handleEditButton = this.handleEditButton.bind(this);
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
     this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
     this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
+    this.revealList = this.revealList.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,7 @@ class SongDetail extends React.Component {
   getSelectedInfo(selected) {
     let startIndex = selected.anchorOffset;
     let endIndex = selected.focusOffset;
+    let parentEl = selected.anchorNode.parentElement;
 
     if (startIndex > endIndex) { // if user selects backwards
       const temp = startIndex;
@@ -34,6 +37,12 @@ class SongDetail extends React.Component {
     }
 
     const selectedText = this.props.song.lyrics.slice(startIndex, endIndex);
+
+    while (parentEl.previousSibling) {
+      startIndex += parentEl.previousSibling.innerText.length;
+      endIndex += parentEl.previousSibling.innerText.length;
+      parentEl = parentEl.previousSibling;
+    }
 
     return ({
       startIndex: startIndex,
@@ -77,6 +86,14 @@ class SongDetail extends React.Component {
     this.setState({ showButton: false });
   }
 
+  revealList() {
+    this.setState({ revealList: true});
+  }
+
+  dummyFunction() {
+    return;
+  }
+
   processLyrics() {
     const processedLyrics = [];
     let className;
@@ -85,39 +102,35 @@ class SongDetail extends React.Component {
       annotations.sort(function(a, b){
           return a.start_index-b.start_index;
       }); // sort annotations based on start index
-      
+
       let currentIndex = 0;
       while (annotations.length > 0 || currentIndex < this.props.song.lyrics.length) {
         const startIndex = annotations[0] && annotations[0].start_index;
-        console.log(annotations);
-        console.log("currentIndex: ", currentIndex);
-        console.log("startIndex: ", startIndex);
         if (startIndex && (currentIndex === startIndex)) {
-          debugger
           className = "annotated";
           const endIndex = annotations[0].end_index;
           const annotatedContent = this.props.song.lyrics.slice(startIndex, endIndex);
           processedLyrics.push({
             content: annotatedContent,
-            className: className
+            className: className,
+            onClick: this.revealList
            });
            currentIndex = endIndex; // reassign current index
            annotations = annotations.slice(1);
-
         } else {
+
           className = "not-annotated";
-          debugger
           let nonAnnotatedContent = "";
           while (currentIndex < (startIndex || this.props.song.lyrics.length)) {
             nonAnnotatedContent += this.props.song.lyrics[currentIndex];
             currentIndex++; // find the next annotation
           }
           processedLyrics.push({content: nonAnnotatedContent,
-          className: className });
+          className: className, onClick: this.dummyFunction });
         }
       }
     }
-    return processedLyrics || this.props.song.lyrics;
+    return processedLyrics;
   }
 
   render() {
@@ -149,7 +162,7 @@ class SongDetail extends React.Component {
             </h3>
             <div onMouseUp={this.showAnnotationButton} className="lyrics-text">
               {this.processLyrics().map((segment, id) => {
-                return <span className={segment.className} key={id}>
+                return <span className={segment.className} key={id} onClick={segment.onClick}>
                   {segment.content}
                 </span>;
               })}
@@ -166,7 +179,8 @@ class SongDetail extends React.Component {
               endIndex={this.state.endIndex}
               annotationButtonPosition={this.state.annotationButtonPosition}
               currentUser={this.props.currentUser}
-              song={this.props.song}/>
+              song={this.props.song}
+              revealList={this.state.revealList}/>
           </section>
         </section>
       );

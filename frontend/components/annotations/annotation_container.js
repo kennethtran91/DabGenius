@@ -6,6 +6,7 @@ import Annotation from './annotation';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
+    currentSong: state.songs.songDetail
   };
 };
 

@@ -52,7 +52,7 @@ class Annotation extends React.Component{
         return (
           <div className="annotation-form group">
             <textarea className="annotation-textarea"
-              placeholder="Woo"
+              placeholder="Annotation goes here"
               onChange={this.updateBody}/>
             <br/>
             <div className="form-buttons">
@@ -82,7 +82,7 @@ class Annotation extends React.Component{
     });
 
     const annotationPost = () => {
-      if (this.state.showAnnotationPost) {
+      if (this.state.showAnnotationPost || this.props.revealList) {
         return (
           <ul>
             {annotationList()}

@@ -5,8 +5,8 @@ import AnnotationsReducer from './annotations_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  songs: SongsReducer,
-  annotations: AnnotationsReducer
+  songs: SongsReducer
+  // annotations: AnnotationsReducer
 });
 
 export default RootReducer;

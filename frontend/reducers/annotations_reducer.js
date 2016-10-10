@@ -4,7 +4,6 @@ import merge from 'lodash/merge';
 const defaultState = { annotations: [] };
 
 const AnnotationsReducer = ( state = defaultState, action ) => {
-  debugger
   switch(action.type) {
 
     case ADD_NEW_ANNOTATION:
@@ -17,3 +16,5 @@ const AnnotationsReducer = ( state = defaultState, action ) => {
       return state;
   }
 };
+
+export default AnnotationsReducer;
