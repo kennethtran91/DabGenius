@@ -106,8 +106,7 @@ class SongDetail extends React.Component {
           processedLyrics.push({
             content: annotatedContent,
             className: className,
-            author: annotations[0].author,
-            onClick: this.handleAnnotationClick
+            onClick: this.handleAnnotationClick.bind(null, annotations[0])
            });
            currentIndex = endIndex; // reassign current index
            annotations = annotations.slice(1);
@@ -152,7 +151,7 @@ class SongDetail extends React.Component {
             </h3>
             <div onMouseUp={this.showAnnotationButton} className="lyrics-text">
               {this.processLyrics().map((segment, id) => {
-                return <span className={segment.className} key={id} onClick={segment.onClick.bind(null, segment)}>
+                return <span className={segment.className} key={id} onClick={segment.onClick}>
                   {segment.content}
                 </span>;
               })}

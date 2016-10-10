@@ -83,17 +83,20 @@ class Annotation extends React.Component{
 
     let that = this;
     const annotationPost = () => {
-      debugger
-      const anno = this.props.selectedElement;
+      const anno = that.props.selectedElement;
       if (anno) {
         return (
           <div className="annotation-element">
             <h1>Annotation by: {anno.author}</h1>
-            <p>{that.state.body}</p>
+            <p>{anno.body}</p>
           </div>
         );
       }
     };
+
+    // const annotationPost = () => {
+    //
+    // };
 
     return (
       <div>
