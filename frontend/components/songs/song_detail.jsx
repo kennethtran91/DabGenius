@@ -1,5 +1,6 @@
 import React from 'react';
 import AnnotationContainer from '../annotations/annotation_container';
+import { hashHistory } from 'react-router';
 
 class SongDetail extends React.Component {
   constructor(props) {
@@ -12,13 +13,25 @@ class SongDetail extends React.Component {
     this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
     this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
-    this.revealList = this.revealList.bind(this);
-    this.hideList = this.hideList.bind(this);
+    this.handleAnnotationClick = this.handleAnnotationClick.bind(this);
+    // this.showAnnotation = this.showAnnotation.bind(this);
   }
 
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
     this.props.requestAllAnnotations(this.props.params.songId);
+  }
+
+  hideAnnotationButton(e) {
+    this.setState({ showButton: false, selectedElement: null});
+  }
+
+  hideButton() {
+    this.setState({ showButton: false });
+  }
+
+  handleAnnotationClick(annotation) {
+    this.setState({selectedElement: annotation});
   }
 
   getSelectedInfo(selected) {
@@ -49,7 +62,7 @@ class SongDetail extends React.Component {
 
   resetState() {
     this.setState({showButton: false, startIndex: 0, endIndex: 0,
-    lyrics: "", selectedElement: null, annotationButtonPosition: null, showList: false});
+    lyrics: "", selectedElement: null, annotationButtonPosition: null});
   }
 
   showAnnotationButton(e) {
@@ -73,22 +86,6 @@ class SongDetail extends React.Component {
     lyrics: lyrics, annotationButtonPosition: annotationPosition });
   }
 
-  hideAnnotationButton(e) {
-    this.setState({ showButton: false, selectedElement: null});
-  }
-
-  hideButton() {
-    this.setState({ showButton: false });
-  }
-
-  revealList() {
-    this.setState({ revealList: true});
-  }
-
-  hideList() {
-    this.setState({ revealList: false});
-  }
-
   processLyrics() {
     const processedLyrics = [];
     let className;
@@ -101,6 +98,7 @@ class SongDetail extends React.Component {
       let currentIndex = 0;
       while (annotations.length > 0 || currentIndex < this.props.song.lyrics.length) {
         const startIndex = annotations[0] && annotations[0].start_index;
+
         if (startIndex && (currentIndex === startIndex)) {
           className = "annotated";
           const endIndex = annotations[0].end_index;
@@ -108,12 +106,13 @@ class SongDetail extends React.Component {
           processedLyrics.push({
             content: annotatedContent,
             className: className,
-            onClick: this.revealList
+            author: annotations[0].author,
+            onClick: this.handleAnnotationClick
            });
            currentIndex = endIndex; // reassign current index
            annotations = annotations.slice(1);
-        } else {
 
+        } else {
           className = "not-annotated";
           let nonAnnotatedContent = "";
           while (currentIndex < (startIndex || this.props.song.lyrics.length)) {
@@ -121,7 +120,7 @@ class SongDetail extends React.Component {
             currentIndex++; // find the next annotation
           }
           processedLyrics.push({content: nonAnnotatedContent,
-          className: className, onClick: this.hideList });
+          className: className, onClick: this.resetState });
         }
       }
     }
@@ -153,7 +152,7 @@ class SongDetail extends React.Component {
             </h3>
             <div onMouseUp={this.showAnnotationButton} className="lyrics-text">
               {this.processLyrics().map((segment, id) => {
-                return <span className={segment.className} key={id} onClick={segment.onClick}>
+                return <span className={segment.className} key={id} onClick={segment.onClick.bind(null, segment)}>
                   {segment.content}
                 </span>;
               })}
@@ -171,7 +170,7 @@ class SongDetail extends React.Component {
               annotationButtonPosition={this.state.annotationButtonPosition}
               currentUser={this.props.currentUser}
               song={this.props.song}
-              revealList={this.state.revealList}/>
+              selectedElement={this.state.selectedElement}/>
           </section>
         </section>
       );

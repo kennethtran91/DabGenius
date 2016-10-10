@@ -1,0 +1,27 @@
+.annotated {
+  background-color: lightblue;
+}
+
+.annotated:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.annotation-container {
+  float: right;
+  margin-right: 10%;
+  margin-top: 10%;
+  width: 300px;
+}
+
+.annotation-form {
+  border-left: 5px solid #99a7ee;
+  padding-left: 20px;
+}
+
+.annotation-textarea {
+  border: 1px solid #ccc;
+  background-color: #e9e9e9;
+  width: 250px;
+  height: 200px;
+}
