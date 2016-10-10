@@ -101,6 +101,9 @@ class SongDetail extends React.Component {
 
         if (startIndex && (currentIndex === startIndex)) {
           className = "annotated";
+          if (annotations[0] === this.state.selectedElement) {
+            className = "annotated selected";
+          }
           const endIndex = annotations[0].end_index;
           const annotatedContent = this.props.song.lyrics.slice(startIndex, endIndex);
           processedLyrics.push({

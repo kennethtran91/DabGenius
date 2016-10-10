@@ -34,7 +34,7 @@ class Annotation extends React.Component{
   }
 
   render() {
-
+    debugger
     const annotationButton = () => {
       if (this.props.show) {
         return (
@@ -69,34 +69,21 @@ class Annotation extends React.Component{
       }
     };
 
-    // const annotationList = () => this.props.song.annotations.map((annotation, id) => {
-    //   return (
-    //     <li key={id} className="annotation-post">
-    //       <h2>{annotation.author} wrote: </h2>
-    //       <p className="annotation-body">
-    //         {annotation.body}
-    //       </p>
-    //     </li>
-    //   );
-    // });
-
 
     let that = this;
     const annotationPost = () => {
       const anno = that.props.selectedElement;
       if (anno) {
         return (
-          <div className="annotation-element">
-            <h1>Annotation by: {anno.author}</h1>
-            <p>{anno.body}</p>
+          <div className="annotation-display">
+            <h1 className="annotation-author">Annotation by: {anno.author}</h1>
+            <br/>
+            <p className="annotation-body">{anno.body}</p>
           </div>
         );
       }
     };
 
-    // const annotationPost = () => {
-    //
-    // };
 
     return (
       <div>
