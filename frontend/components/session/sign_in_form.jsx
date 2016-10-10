@@ -65,17 +65,17 @@ class SignInForm extends React.Component{
                           setTimeout(() => {
                             session.handleSubmit();
                           });
-                        }, 20);
-                      }, 20);
-                    }, 20);
-                  }, 20);
-                }, 20);
-              }, 20);
-            }, 20);
-          }, 20);
-        }, 20);
-      }, 20);
-    }, 20);
+                        }, 150);
+                      }, 150);
+                    }, 150);
+                  }, 150);
+                }, 150);
+              }, 150);
+            }, 150);
+          }, 150);
+        }, 150);
+      }, 150);
+    }, 150);
   }
 
   render() {
@@ -101,12 +101,14 @@ class SignInForm extends React.Component{
               ref = "usernameInput"
               className="session-input"
               type="text"
-              placeholder="username..."></input>
+              placeholder="username..."
+              value={this.state.username}></input>
             <br></br>
             <input onChange={this.updatePassword}
               className="session-input"
               type="password"
-              placeholder="password..."></input>
+              placeholder="password..."
+              value={this.state.password}></input>
           </div>
           <br></br>
           <br></br>

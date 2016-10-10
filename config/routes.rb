@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
     resources :songs, only: [:index, :new, :create, :edit, :show, :update, :destroy]
-    resources :annotations, only: [:show, :create, :destroy]
+    resources :annotations, only: [:show, :create, :destroy, :index]
   end
 end

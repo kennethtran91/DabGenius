@@ -1,7 +1,8 @@
 export const CREATE_ANNOTATION = "CREATE_ANNOTATION";
 export const DELETE_ANNOTATION = "DELETE_ANNOTATION";
-export const REQUEST_ONE_ANNOTATION = "REQUEST_ONE_ANNOTATION";
-export const RECEIVE_ONE_ANNOTATION = "RECEIVE_ONE_ANNOTATION";
+export const REQUEST_ALL_ANNOTATIONS = "REQUEST_ALL_ANNOTATIONS";
+export const RECEIVE_ALL_ANNOTATIONS = "RECEIVE_ALL_ANNOTATIONS";
+export const ADD_NEW_ANNOTATION = "ADD_NEW_ANNOTATION";
 
 
 export const createAnnotation = (annotation) => {
@@ -17,16 +18,22 @@ export const deleteAnnotation = () => {
   };
 };
 
-export const requestOneAnnotation = (id) => {
+export const requestAllAnnotations = () => {
   return {
-    type: REQUEST_ONE_ANNOTATION,
-    id
+    type: REQUEST_ALL_ANNOTATIONS,
   };
 };
 
-export const receiveOneAnnotation = (annotation) => {
+export const receiveAllAnnotations = (annotations) => {
   return {
-    type: RECEIVE_ONE_ANNOTATION,
+    type: RECEIVE_ALL_ANNOTATIONS,
+    annotations
+  };
+};
+
+export const addNewAnnotation = (annotation) => {
+  return {
+    type: ADD_NEW_ANNOTATION,
     annotation
   };
 };

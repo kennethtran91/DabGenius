@@ -70,16 +70,23 @@ class Annotation extends React.Component{
       }
     };
 
+    const annotationList = () => this.props.song.annotations.map((annotation, id) => {
+      return (
+        <li key={id} className="annotation-post">
+          <h2>{annotation.author} wrote: </h2>
+          <p className="annotation-body">
+            {annotation.body}
+          </p>
+        </li>
+      );
+    });
+
     const annotationPost = () => {
       if (this.state.showAnnotationPost) {
         return (
-          <div className="annotation-post">
-            <h2>{this.props.currentUser.username} wrote: </h2>
-            <p className="annotation-body">
-              {this.state.body}
-            </p>
-
-          </div>
+          <ul>
+            {annotationList()}
+          </ul>
         );
       }
     };

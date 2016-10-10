@@ -15,6 +15,7 @@ class SongDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
+    this.props.requestAllAnnotations();
   }
 
   handleEditButton(e) {

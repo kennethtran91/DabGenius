@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SongDetail from './song_detail';
 import { requestOneSong } from '../../actions/song_actions';
+import { requestAllAnnotations } from '../../actions/annotation_actions';
 
 const mapStateToProps = ( state ) => {
   return {
@@ -11,7 +12,8 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    requestOneSong: (song) => dispatch(requestOneSong(song))
+    requestOneSong: (song) => dispatch(requestOneSong(song)),
+    requestAllAnnotations: () => dispatch(requestAllAnnotations())
   };
 };
 
