@@ -11,6 +11,7 @@ class SongDetail extends React.Component {
     this.resetState = this.resetState.bind(this);
     this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
     this.hideButton = this.hideButton.bind(this);
+    this.processLyrics = this.processLyrics.bind(this);
   }
 
   componentDidMount() {
@@ -76,6 +77,44 @@ class SongDetail extends React.Component {
     this.setState({ showButton: false });
   }
 
+  processLyrics() {
+    const processedLyrics = [];
+    let className;
+    let annotations = this.props.song.annotations;
+    if (annotations) {
+      let currentIndex = 0;
+      while (annotations.length > 0 || currentIndex < this.props.song.lyrics.length) {
+        const startIndex = annotations[0] && annotations[0].start_index;
+        console.log(annotations);
+        console.log(currentIndex);
+        console.log(this.props.song.lyrics.length);
+        
+        if (startIndex && (currentIndex === startIndex)) {
+          className = "annotated";
+          const endIndex = annotations[0].end_index;
+          const annotatedContent = this.props.song.lyrics.slice(startIndex, endIndex);
+          processedLyrics.push({
+            content: annotatedContent,
+            className: className
+           });
+           currentIndex = endIndex; // reassign current index
+           annotations = annotations.slice(1);
+
+        } else {
+          className = "not-annotated"; // nonAnnotatedContent
+          let nonAnnotatedContent = "";
+          while (currentIndex < (startIndex || this.props.song.lyrics.length)) {
+            nonAnnotatedContent += this.props.song.lyrics[currentIndex];
+            currentIndex++; // find the next annotation
+          }
+          processedLyrics.push({content: nonAnnotatedContent,
+          className: className });
+        }
+      }
+    }
+    return processedLyrics || this.props.song.lyrics;
+  }
+
   render() {
 
     if (this.props.song) {
@@ -103,8 +142,13 @@ class SongDetail extends React.Component {
             <h3 className="lyrics-header">
               {this.props.song.title} lyrics
             </h3>
-            <p onMouseUp={this.showAnnotationButton} className="lyrics-text">
-              {this.props.song.lyrics}</p>
+            <div onMouseUp={this.showAnnotationButton} className="lyrics-text">
+              {this.processLyrics().map((segment, id) => {
+                return <span className={segment.className} key={id}>
+                  {segment.content}
+                </span>;
+              })}
+            </div>
           </section>
 
           <section className="annotation-container">

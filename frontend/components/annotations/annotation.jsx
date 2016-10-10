@@ -19,7 +19,7 @@ class Annotation extends React.Component{
 
   handleCancel(e) {
     e.preventDefault();
-    this.setState({showAnnotationForm: false});
+    this.setState({showAnnotationForm: false, showAnnotationPost: false});
   }
 
   handleSave(e) {
