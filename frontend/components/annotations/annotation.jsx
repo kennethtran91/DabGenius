@@ -3,8 +3,7 @@ import React from 'react';
 class Annotation extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {showAnnotationForm: false, body: "",
-    showAnnotationPost: false};
+    this.state = {showAnnotationForm: false, body: ""};
     this.openForm = this.openForm.bind(this);
     this.updateBody = this.updateBody.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -19,7 +18,7 @@ class Annotation extends React.Component{
 
   handleCancel(e) {
     e.preventDefault();
-    this.setState({showAnnotationForm: false, showAnnotationPost: false});
+    this.setState({showAnnotationForm: false});
   }
 
   handleSave(e) {
@@ -27,7 +26,7 @@ class Annotation extends React.Component{
     const annotation = {song_id: this.props.song.id, body: this.state.body,
     start_index: this.props.startIndex, end_index: this.props.endIndex};
     this.props.createAnnotation(annotation);
-    this.setState({showAnnotationPost: true, showAnnotationForm: false});
+    this.setState({showAnnotationForm: false});
   }
 
   updateBody(e) {
@@ -82,7 +81,7 @@ class Annotation extends React.Component{
     });
 
     const annotationPost = () => {
-      if (this.state.showAnnotationPost || this.props.revealList) {
+      if (this.props.revealList) {
         return (
           <ul>
             {annotationList()}

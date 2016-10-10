@@ -13,7 +13,7 @@ const mapStateToProps = ( state ) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     requestOneSong: (song) => dispatch(requestOneSong(song)),
-    requestAllAnnotations: () => dispatch(requestAllAnnotations())
+    requestAllAnnotations: (id) => dispatch(requestAllAnnotations(id))
   };
 };
 

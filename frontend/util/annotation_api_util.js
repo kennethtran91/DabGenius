@@ -17,9 +17,9 @@ export const deleteAnnotation = (id, success, error) => {
   });
 };
 
-export const fetchAllAnnotations = (success, error) => {
+export const fetchAllAnnotations = (id, success, error) => {
   $.ajax({
-    url: `api/annotations`,
+    url: `api/songs/${id}/annotations`,
     method: 'GET',
     success,
     error

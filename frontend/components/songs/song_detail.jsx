@@ -7,22 +7,18 @@ class SongDetail extends React.Component {
     this.state = {showButton: false, startIndex: 0, endIndex: 0,
     lyrics: "", selectedElement: null, annotationButtonPosition: null,
     showList: false};
-    this.handleEditButton = this.handleEditButton.bind(this);
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
     this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
     this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
     this.revealList = this.revealList.bind(this);
+    this.hideList = this.hideList.bind(this);
   }
 
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
-    this.props.requestAllAnnotations();
-  }
-
-  handleEditButton(e) {
-    e.preventDefault();
+    this.props.requestAllAnnotations(this.props.params.songId);
   }
 
   getSelectedInfo(selected) {
@@ -53,7 +49,7 @@ class SongDetail extends React.Component {
 
   resetState() {
     this.setState({showButton: false, startIndex: 0, endIndex: 0,
-    lyrics: "", selectedElement: null, annotationButtonPosition: null});
+    lyrics: "", selectedElement: null, annotationButtonPosition: null, showList: false});
   }
 
   showAnnotationButton(e) {
@@ -65,9 +61,8 @@ class SongDetail extends React.Component {
 
     if (selection.anchorNode !== selection.focusNode) {
      return; // requires that the highlighting is confined to one node
-   }
+    }
 
-  //  const parentElement = selection.anchorNode.parentElement;
     const selectedInfo = this.getSelectedInfo(selection);
     const startIndex = selectedInfo.startIndex;
     const endIndex = selectedInfo.endIndex;
@@ -90,8 +85,8 @@ class SongDetail extends React.Component {
     this.setState({ revealList: true});
   }
 
-  dummyFunction() {
-    return;
+  hideList() {
+    this.setState({ revealList: false});
   }
 
   processLyrics() {
@@ -126,7 +121,7 @@ class SongDetail extends React.Component {
             currentIndex++; // find the next annotation
           }
           processedLyrics.push({content: nonAnnotatedContent,
-          className: className, onClick: this.dummyFunction });
+          className: className, onClick: this.hideList });
         }
       }
     }
@@ -136,10 +131,6 @@ class SongDetail extends React.Component {
   render() {
 
     if (this.props.song) {
-      // let edit = null;
-      // if (this.props.currentUser && this.props.currentUser.id === this.props.song.author_id) {
-      //   edit = <button className="song-edit-button" onClick={this.handleEditButton}>Edit Song</button>;
-      // }
       return (
         <section className="song-detail-container group">
           <div className="song-banner">

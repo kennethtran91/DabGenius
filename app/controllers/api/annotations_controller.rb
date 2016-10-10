@@ -1,7 +1,8 @@
 class Api::AnnotationsController < ApplicationController
 
   def index
-    @annotations = Annotation.all
+    @song = Song.find(params[:song_id])
+    @annotations = @song.annotations
 
     render :index
   end

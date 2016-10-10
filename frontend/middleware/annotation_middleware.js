@@ -12,7 +12,7 @@ const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
 
     case REQUEST_ALL_ANNOTATIONS:
       successCallback = (annotations) => dispatch(receiveAllAnnotations(annotations));
-      API.fetchAllAnnotations(successCallback);
+      API.fetchAllAnnotations(action.id, successCallback);
       return next(action);
 
     default:

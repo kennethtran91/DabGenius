@@ -18,9 +18,10 @@ export const deleteAnnotation = () => {
   };
 };
 
-export const requestAllAnnotations = () => {
+export const requestAllAnnotations = (id) => {
   return {
     type: REQUEST_ALL_ANNOTATIONS,
+    id
   };
 };
 

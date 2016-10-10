@@ -18,7 +18,7 @@ const SongsReducer = (state = defaultState, action) => {
       return merge({}, state, {errors: action.errors});
 
     case RECEIVE_ONE_SONG:
-      return merge({}, state, {songDetail: action.song});
+      return Object.assign({}, state, {songDetail: action.song});
 
     case ADD_NEW_ANNOTATION:
       return merge({}, state, {
