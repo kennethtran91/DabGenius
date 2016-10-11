@@ -34,7 +34,6 @@ class Annotation extends React.Component{
   }
 
   render() {
-    debugger
     const annotationButton = () => {
       if (this.props.show) {
         return (
@@ -51,7 +50,7 @@ class Annotation extends React.Component{
         return (
           <div className="annotation-form group">
             <textarea className="annotation-textarea"
-              placeholder="Annotation goes here"
+              placeholder="Annotation away!"
               onChange={this.updateBody}/>
             <br/>
             <div className="form-buttons">
@@ -83,7 +82,6 @@ class Annotation extends React.Component{
         );
       }
     };
-
 
     return (
       <div>

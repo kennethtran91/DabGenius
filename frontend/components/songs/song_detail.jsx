@@ -1,6 +1,5 @@
 import React from 'react';
 import AnnotationContainer from '../annotations/annotation_container';
-import { hashHistory } from 'react-router';
 
 class SongDetail extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class SongDetail extends React.Component {
     this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
     this.handleAnnotationClick = this.handleAnnotationClick.bind(this);
-    // this.showAnnotation = this.showAnnotation.bind(this);
+
   }
 
   componentDidMount() {
@@ -46,7 +45,6 @@ class SongDetail extends React.Component {
     }
 
     const selectedText = this.props.song.lyrics.slice(startIndex, endIndex);
-
     while (parentEl.previousSibling) {
       startIndex += parentEl.previousSibling.innerText.length;
       endIndex += parentEl.previousSibling.innerText.length;
@@ -63,6 +61,10 @@ class SongDetail extends React.Component {
   resetState() {
     this.setState({showButton: false, startIndex: 0, endIndex: 0,
     lyrics: "", selectedElement: null, annotationButtonPosition: null});
+  }
+
+  dummyFunction() {
+
   }
 
   showAnnotationButton(e) {
@@ -122,7 +124,7 @@ class SongDetail extends React.Component {
             currentIndex++; // find the next annotation
           }
           processedLyrics.push({content: nonAnnotatedContent,
-          className: className, onClick: this.resetState });
+          className: className, onClick: this.dummyFunction });
         }
       }
     }

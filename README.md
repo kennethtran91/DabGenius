@@ -69,10 +69,10 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 
 ### Phase 4: Annotations (2 days)
 **Objective**: Add ability to annotate songs.
-  - [ ] `Annotation` model/controller
-  - [ ] Seed annotations
-  - [ ] Annotation form
-  - [ ] onDrag(?) listeners to lyrics
+  - [✓] `Annotation` model/controller
+  - [✓] Seed annotations
+  - [✓] Annotation form
+  - [✓] onSelection listeners to lyrics
   - [ ] Styling
   - [ ] Review phase 4
 

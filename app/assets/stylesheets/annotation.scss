@@ -23,11 +23,32 @@
   padding-left: 20px;
 }
 
+.form-buttons > button {
+  padding: 3px;
+  margin: 3px 5px 0px 0px;
+  background-color: #fff;
+  color: #0c0;
+  letter-spacing: 1px;
+  border: 2px solid #0c0;
+}
+
+.form-buttons .cancel-button {
+  color: #f00;
+  border-color: #f00;
+}
+
 .annotation-textarea {
   border: 1px solid #ccc;
-  background-color: #e9e9e9;
+  // background-color: #e9e9e9;
   width: 250px;
   height: 200px;
+}
+
+.annotation-button {
+  border-left: 5px solid #99a7ee;
+  padding-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .annotation-display {
