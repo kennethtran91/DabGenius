@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class Annotation extends React.Component{
   constructor(props) {
@@ -56,8 +57,8 @@ class Annotation extends React.Component{
     const annotationForm = () => {
       if (this.state.showAnnotationForm) {
         return (
-          <div className="annotation-form group">
-            <textarea className="annotation-textarea"
+          <div style={style} className="annotation-form group">
+            <textarea ref="annotationTextarea" className="annotation-textarea"
               placeholder="Annotation away!"
               onChange={this.updateBody}/>
             <br/>
@@ -82,7 +83,7 @@ class Annotation extends React.Component{
       const anno = that.props.selectedElement;
       if (anno) {
         return (
-          <div className="annotation-display">
+          <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>
             <br/>
             <p className="annotation-body">{anno.body}</p>

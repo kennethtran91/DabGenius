@@ -9,7 +9,7 @@ class SongDetail extends React.Component {
     showList: false};
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
-    this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
+    // this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
     this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
     this.handleAnnotationClick = this.handleAnnotationClick.bind(this);
@@ -21,9 +21,9 @@ class SongDetail extends React.Component {
     this.props.requestAllAnnotations(this.props.params.songId);
   }
 
-  hideAnnotationButton(e) {
-    this.setState({ showButton: false, selectedElement: null});
-  }
+  // hideAnnotationButton(e) {
+  //   this.setState({ showButton: false, selectedElement: null});
+  // }
 
   hideButton() {
     this.setState({ showButton: false });

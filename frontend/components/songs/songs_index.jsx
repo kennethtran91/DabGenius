@@ -20,15 +20,64 @@ export default class SongsIndex extends React.Component {
   }
 
   render() {
-    return (
-      <section className="song-index">
-        <ul>
-          {this.props.songs.map(song => (
-            <SongsIndexItem key={song.id} song={song} />
-          ))}
-        </ul>
+    const songCollection = this.songCollection();
+    const featuredSongs = songCollection[0].map((song, id) => {
+      return (
+        <div key={id}>
+          <SongsIndexItem key={id} song={song}/>
+          <section className="featured-desc"><div className="featured-title">{song.title}</div> by <div className="featured-artist">{song.artist}</div> is one of America's biggest songs right now! Learn the lyrics and show off to the squad.</section>
+        </div>
+      );
+    });
+    const otherSongs = songCollection[1].map((song, id) => {
+      return <SongsIndexItem key={id} song={song}/>;
+    });
 
-      </section>
+    const wideSong = songCollection[1].slice(0, 1).map((song) => {
+      return (
+        <SongsIndexItem applyClass="wide-song" key={song.id} song={song}/>
+      );
+    });
+
+    const mediumSong = songCollection[1].slice(1, 5).map((song) => {
+      return (
+        <SongsIndexItem applyClass="medium-song" key={song.id} song={song}/>
+      );
+    });
+
+    const smallSong = songCollection[1].slice(5, songCollection[1].length).map((song) => {
+      return (
+        <SongsIndexItem applyClass="small-song" key={song.id} song={song}/>
+      );
+    });
+
+      return(
+        <div className="song-index group">
+
+          <section className="featured-songs left-column">
+            <ul>
+              <h1>Featured Songs</h1>
+              {featuredSongs}
+            </ul>
+          </section>
+
+          <section className=" right-column">
+
+            <ul className="other-songs group">
+              <section className="about-container group">
+                <p className="about-info">
+                  <img className="dab" src="https://ih0.redbubble.net/image.150004174.7724/sticker,375x360.u1.png"></img>
+                  Dab genius is a web application that allows its users to annotate their favorite songs.
+                </p>
+              </section>
+              <h3 className="fire">What's hot?</h3>
+              {wideSong}
+              {mediumSong}
+              {smallSong}
+            </ul>
+
+          </section>
+        </div>
     );
   }
 }

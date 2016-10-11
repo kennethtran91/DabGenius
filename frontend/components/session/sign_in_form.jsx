@@ -36,9 +36,6 @@ class SignInForm extends React.Component{
 
   guestSignIn(e) {
     e.preventDefault();
-    // this.setState({username: "guest"});
-    // this.setState({password: "rapgod"});
-    // this.handleSubmit();
     const session = this;
     setTimeout(() => {
       session.setState({username: "g"});
