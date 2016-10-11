@@ -1,4 +1,4 @@
-import { CREATE_ANNOTATION, addNewAnnotation, REQUEST_ALL_ANNOTATIONS, receiveAllAnnotations } from '../actions/annotation_actions';
+import { CREATE_ANNOTATION, addNewAnnotation, REQUEST_ALL_ANNOTATIONS, receiveAllAnnotations, REQUEST_ONE_ANNOTATION, receiveOneAnnotation } from '../actions/annotation_actions';
 import * as API from '../util/annotation_api_util';
 
 const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
@@ -15,6 +15,9 @@ const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
       API.fetchAllAnnotations(action.id, successCallback);
       return next(action);
 
+    // case REQUEST_ONE_ANNOTATION:
+    //   successCallback = (annotation) => dispatch(receiveOneAnnotation(annotation));
+    //   API.fetch
     default:
       return next(action);
   }

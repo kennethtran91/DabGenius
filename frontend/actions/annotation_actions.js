@@ -3,7 +3,8 @@ export const DELETE_ANNOTATION = "DELETE_ANNOTATION";
 export const REQUEST_ALL_ANNOTATIONS = "REQUEST_ALL_ANNOTATIONS";
 export const RECEIVE_ALL_ANNOTATIONS = "RECEIVE_ALL_ANNOTATIONS";
 export const ADD_NEW_ANNOTATION = "ADD_NEW_ANNOTATION";
-
+export const REQUEST_ONE_ANNOTATION = "REQUEST_ONE_ANNOTATION";
+export const RECEIVE_ONE_ANNOTATION = "RECEIVE_ONE_ANNOTATION";
 
 export const createAnnotation = (annotation) => {
   return {
@@ -38,3 +39,17 @@ export const addNewAnnotation = (annotation) => {
     annotation
   };
 };
+
+// export const requestOneAnnotation = (id) => {
+//   return {
+//     type: REQUEST_ONE_ANNOTATION,
+//     id
+//   };
+// };
+//
+// export const receiveOneAnnotation = (annotation) => {
+//   return {
+//     type: RECEIVE_ONE_ANNOTATION,
+//     annotation
+//   };
+// };

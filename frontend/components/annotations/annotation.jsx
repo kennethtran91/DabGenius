@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class Annotation extends React.Component{
   constructor(props) {
@@ -11,16 +11,20 @@ class Annotation extends React.Component{
     this.handleSave = this.handleSave.bind(this);
   }
 
+  componentWillReceiveProps() {
+    if (this.props.selectedAnnotation) {
+      this.props.requestAllComments(this.props.selectedAnnotation.id);
+    }
+  }
+
   // componentDidMount() {
-  //   this.props.requestAllComments(this.props.params.annotationId);
+  //   this.props.requestOneAnnotation(this.props.selectedAnnotation.id);
   // }
 
   openForm(e) {
     e.preventDefault();
     this.props.setAnnotationStatus("form");
   }
-
-
 
   handleCancel(e) {
     e.preventDefault();
@@ -62,20 +66,20 @@ class Annotation extends React.Component{
       if (this.props.showStatus === "form") {
         return (
           <div style={style} className="annotation-form group">
-            <textarea ref="annotationTextarea" className="annotation-textarea"
+            <textarea className="annotation-textarea"
               placeholder="Annotation away!"
               onChange={this.updateBody}/>
             <br/>
             <div className="form-buttons">
-                <button className="save-button"
-                        onClick={this.handleSave}>
-                        Save
-                </button>
-                <button className="cancel-button"
-                        onClick={this.handleCancel}>
-                        Cancel
-                </button>
-              </div>
+              <button className="save-button"
+                      onClick={this.handleSave}>
+                      Save
+              </button>
+              <button className="cancel-button"
+                      onClick={this.handleCancel}>
+                      Cancel
+              </button>
+            </div>
           </div>
         );
       }
@@ -84,13 +88,15 @@ class Annotation extends React.Component{
 
     let that = this;
     const annotationPost = () => {
-      const anno = that.props.selectedElement;
+      const anno = that.props.selectedAnnotation;
       if (this.props.showStatus === "post") {
         return (
           <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>
             <br/>
             <p className="annotation-body">{anno.body}</p>
+            {anno.comments}
+            <CommentFormContainer annotationId={anno.id}/>
           </div>
         );
       }

@@ -11,6 +11,7 @@ export const createComment = (comment, success, error) => {
   $.ajax({
     url: `api/annotations/${comment.annotation_id}/comments`,
     method: 'POST',
+    data: {comment: comment},
     success,
     error
   });

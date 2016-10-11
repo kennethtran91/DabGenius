@@ -6,6 +6,7 @@ import NewSongFormContainer from './new_song_form/new_song_form_container';
 import Homepage from './homepage/homepage';
 import SongDetailContainer from './songs/song_detail_container';
 import * as SongActions from '../actions/song_actions';
+// import AnnotationContainer from './annotations/annotation_container';
 
 
 const Root = ({ store }) => {
@@ -22,13 +23,15 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
 
           <IndexRoute component={Homepage} />
+
           <Route path="api/songs/new"
             component={NewSongFormContainer}
             onEnter={_redirectUnlessLoggedIn}></Route>
 
           <Route path="api/songs/:songId"
-            component={SongDetailContainer}></Route>
+            component={SongDetailContainer}>
 
+          </Route>
         </Route>
       </Router>
     </Provider>

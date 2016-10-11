@@ -1,25 +1,10 @@
 import React from 'react';
 
-class Comment extends React.Component{
-  constructor(props) {
-    super(props);
-
-    this.state = {showStatus: ""};
-  }
-
-  render() {
-    const commentForm = () => {
-      if (this.state.showStatus === "form") {
-        return (
-          <div className="comment-form">
-            
-          </div>
-        );
-      }
-    };
-
-  }
-
-}
+const Comment = ({ comment }) => (
+  <div className={`comment-item`}>
+    <h3 className="comment-header">{comment.author} wrote: </h3>
+    <p className="comment-body">{comment.body}</p>
+  </div>
+)
 
 export default Comment;

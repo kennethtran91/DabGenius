@@ -5,7 +5,7 @@ class SongDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showStatus: "", startIndex: 0, endIndex: 0,
-    lyrics: "", selectedElement: null, annotationButtonPosition: null,
+    lyrics: "", selectedAnnotation: null, annotationButtonPosition: null,
     showList: false};
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
@@ -18,10 +18,11 @@ class SongDetail extends React.Component {
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
     this.props.requestAllAnnotations(this.props.params.songId);
+    // this.props.requestAllComments(this.props.params.songId);
   }
 
   handleAnnotationClick(annotation, e) {
-    this.setState({selectedElement: annotation, annotationButtonPosition: e.pageY,
+    this.setState({selectedAnnotation: annotation, annotationButtonPosition: e.pageY,
     showStatus: "post"});
   }
 
@@ -52,7 +53,7 @@ class SongDetail extends React.Component {
 
   resetState() {
     this.setState({showStatus: "", startIndex: 0, endIndex: 0,
-    lyrics: "", selectedElement: null, annotationButtonPosition: null});
+    lyrics: "", selectedAnnotation: null, annotationButtonPosition: null});
   }
 
   dummyFunction() {
@@ -100,7 +101,7 @@ class SongDetail extends React.Component {
 
         if (startIndex && (currentIndex === startIndex)) {
           className = "annotated";
-          if (annotations[0] === this.state.selectedElement) {
+          if (annotations[0] === this.state.selectedAnnotation) {
             className = "annotated selected";
           }
           const endIndex = annotations[0].end_index;
@@ -169,7 +170,7 @@ class SongDetail extends React.Component {
               endIndex={this.state.endIndex}
               annotationButtonPosition={this.state.annotationButtonPosition}
               song={this.props.song}
-              selectedElement={this.state.selectedElement}
+              selectedAnnotation={this.state.selectedAnnotation}
               setAnnotationStatus={this.setAnnotationStatus}/>
           </section>
         </section>
