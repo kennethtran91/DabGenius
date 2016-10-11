@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_ONE_SONG, ADD_NEW_SONG } from '../actions/song_actions';
 import { ADD_NEW_ANNOTATION } from '../actions/annotation_actions';
+import { ADD_NEW_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
@@ -23,7 +24,14 @@ const SongsReducer = (state = defaultState, action) => {
     case ADD_NEW_ANNOTATION:
       return merge({}, state, {
         songDetail: {annotations: [...state.songDetail.annotations, action.annotation]}
-      })
+      });
+
+    case ADD_NEW_COMMENT:
+      return merge({}, state, {
+        songDetail: {annotations: {
+          comments: [...state.songDetail.annotations.comments, action.comment]
+        }}
+      });
 
     default:
       return state;

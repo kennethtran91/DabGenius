@@ -67,7 +67,7 @@ export default class SongsIndex extends React.Component {
               <section className="about-container group">
                 <p className="about-info">
                   <img className="dab" src="https://ih0.redbubble.net/image.150004174.7724/sticker,375x360.u1.png"></img>
-                  Dab genius is a web application that allows its users to annotate their favorite songs.
+                  Dab genius is a web application that allows its users to annotate their favorite songs. All you have to do is sign up to get started!
                 </p>
               </section>
               <h3 className="fire">What's hot?</h3>

@@ -11,15 +11,20 @@ class Annotation extends React.Component{
     this.handleSave = this.handleSave.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.requestAllComments(this.props.params.annotationId);
+  // }
+
   openForm(e) {
     e.preventDefault();
-    this.props.hide();
-    this.setState({showAnnotationForm: true});
+    this.props.setAnnotationStatus("form");
   }
+
+
 
   handleCancel(e) {
     e.preventDefault();
-    this.setState({showAnnotationForm: false});
+    this.props.setAnnotationStatus("");
   }
 
   handleSave(e) {
@@ -27,7 +32,7 @@ class Annotation extends React.Component{
     const annotation = {song_id: this.props.song.id, body: this.state.body,
     start_index: this.props.startIndex, end_index: this.props.endIndex};
     this.props.createAnnotation(annotation);
-    this.setState({showAnnotationForm: false});
+    this.props.setAnnotationStatus("");
   }
 
   updateBody(e) {
@@ -35,14 +40,13 @@ class Annotation extends React.Component{
   }
 
   render() {
-
     const style = {
       position: "absolute",
       top: this.props.annotationButtonPosition
     };
 
     const annotationButton = () => {
-      if (this.props.show) {
+      if (this.props.showStatus === "button") {
 
         return (
           <button style={style}
@@ -55,7 +59,7 @@ class Annotation extends React.Component{
     };
 
     const annotationForm = () => {
-      if (this.state.showAnnotationForm) {
+      if (this.props.showStatus === "form") {
         return (
           <div style={style} className="annotation-form group">
             <textarea ref="annotationTextarea" className="annotation-textarea"
@@ -81,7 +85,7 @@ class Annotation extends React.Component{
     let that = this;
     const annotationPost = () => {
       const anno = that.props.selectedElement;
-      if (anno) {
+      if (this.props.showStatus === "post") {
         return (
           <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>

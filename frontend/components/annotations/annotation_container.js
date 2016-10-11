@@ -2,6 +2,7 @@ import React from 'react';
 import { createAnnotation } from '../../actions/annotation_actions';
 import { connect } from 'react-redux';
 import Annotation from './annotation';
+import { requestAllComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createAnnotation: (annotation) => dispatch(createAnnotation(annotation))
+    createAnnotation: (annotation) => dispatch(createAnnotation(annotation)),
+    requestAllComments: (id) => dispatch(requestAllComments(id))
   };
 
 };

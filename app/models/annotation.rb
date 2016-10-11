@@ -10,4 +10,9 @@ class Annotation < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id,
     class_name: 'User'
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :annotation_id,
+    class_name: 'Comment'
 end

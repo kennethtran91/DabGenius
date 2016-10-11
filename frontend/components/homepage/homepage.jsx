@@ -13,9 +13,6 @@ class Homepage extends React.Component{
         <div className="add-song-link-container">
           <Link className="add-song-link" to="/api/songs/new">ADD NEW SONG</Link>
         </div>
-        <section className="">
-          
-        </section>
         <section>
           <section className="songs-list">
             <SongsIndexContainer/>

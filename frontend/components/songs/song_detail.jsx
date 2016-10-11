@@ -4,15 +4,14 @@ import AnnotationContainer from '../annotations/annotation_container';
 class SongDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showButton: false, startIndex: 0, endIndex: 0,
+    this.state = {showStatus: "", startIndex: 0, endIndex: 0,
     lyrics: "", selectedElement: null, annotationButtonPosition: null,
     showList: false};
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
-    // this.hideAnnotationButton = this.hideAnnotationButton.bind(this);
-    this.hideButton = this.hideButton.bind(this);
     this.processLyrics = this.processLyrics.bind(this);
     this.handleAnnotationClick = this.handleAnnotationClick.bind(this);
+    this.setAnnotationStatus = this.setAnnotationStatus.bind(this);
 
   }
 
@@ -21,16 +20,9 @@ class SongDetail extends React.Component {
     this.props.requestAllAnnotations(this.props.params.songId);
   }
 
-  // hideAnnotationButton(e) {
-  //   this.setState({ showButton: false, selectedElement: null});
-  // }
-
-  hideButton() {
-    this.setState({ showButton: false });
-  }
-
-  handleAnnotationClick(annotation) {
-    this.setState({selectedElement: annotation});
+  handleAnnotationClick(annotation, e) {
+    this.setState({selectedElement: annotation, annotationButtonPosition: e.pageY,
+    showStatus: "post"});
   }
 
   getSelectedInfo(selected) {
@@ -59,7 +51,7 @@ class SongDetail extends React.Component {
   }
 
   resetState() {
-    this.setState({showButton: false, startIndex: 0, endIndex: 0,
+    this.setState({showStatus: "", startIndex: 0, endIndex: 0,
     lyrics: "", selectedElement: null, annotationButtonPosition: null});
   }
 
@@ -70,6 +62,7 @@ class SongDetail extends React.Component {
   showAnnotationButton(e) {
     const selection = window.getSelection();
     if (selection.toString().length === 0) {
+
       this.resetState();
       return; // nothing selected
     }
@@ -84,8 +77,12 @@ class SongDetail extends React.Component {
     const lyrics = selectedInfo.selectedText;
     const annotationPosition = e.pageY;
 
-    this.setState({ showButton: true, startIndex: startIndex, endIndex: endIndex,
-    lyrics: lyrics, annotationButtonPosition: annotationPosition });
+    this.setState({ showStatus: "button", startIndex: startIndex, endIndex: endIndex, lyrics: lyrics, annotationButtonPosition: annotationPosition });
+
+  }
+
+  setAnnotationStatus(status) {
+    this.setState({showStatus: status});
   }
 
   processLyrics() {
@@ -165,16 +162,15 @@ class SongDetail extends React.Component {
 
           <section className="annotation-container">
             <AnnotationContainer
-              show={this.state.showButton}
-              hide={this.hideButton}
+              showStatus={this.state.showStatus}
               songId={this.props.song.id}
               lyrics={this.state.lyrics}
               startIndex={this.state.startIndex}
               endIndex={this.state.endIndex}
               annotationButtonPosition={this.state.annotationButtonPosition}
-              currentUser={this.props.currentUser}
               song={this.props.song}
-              selectedElement={this.state.selectedElement}/>
+              selectedElement={this.state.selectedElement}
+              setAnnotationStatus={this.setAnnotationStatus}/>
           </section>
         </section>
       );
