@@ -34,10 +34,18 @@ class Annotation extends React.Component{
   }
 
   render() {
+
+    const style = {
+      position: "absolute",
+      top: this.props.annotationButtonPosition
+    };
+
     const annotationButton = () => {
       if (this.props.show) {
+
         return (
-          <button onClick={this.openForm}
+          <button style={style}
+            onClick={this.openForm}
             className="annotation-button">Enlighten us</button>
         );
       } else {
