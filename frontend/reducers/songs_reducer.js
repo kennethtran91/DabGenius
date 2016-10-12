@@ -5,10 +5,9 @@ import { RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
 import _ from 'lodash';
 
-const defaultState = { songs: [], songDetail: {annotations: []}, errors: []};
+const defaultState = { songs: [], songDetail: null, errors: []};
 
 const SongsReducer = (state = defaultState, action) => {
-  debugger
   switch(action.type) {
 
     case RECEIVE_ALL_SONGS:
@@ -30,21 +29,24 @@ const SongsReducer = (state = defaultState, action) => {
 
     // case RECEIVE_ONE_ANNOTATION:
 
-    case ADD_NEW_COMMENT:
-
-    const annoIndex = _.findIndex(state.songDetail.annotations,
-    ['id', action.comment.annotation_id])
-
-    const firstHalf = state.songDetail.annotations.slice(0, annoIndex)
-    const secondHalf = state.songDetail.annotations.slice(annoIndex + 1, state.songDetail.annotations.length)
-    const anno = state.songDetail.annotations[annoIndex];
-
-
-      return Object.assign({}, state, {
-        songDetail: {annotations: {
-          comments: [...state.songDetail.annotations.comments, action.comment]
-        }}
-      });
+    // case ADD_NEW_COMMENT:
+    //
+    // const annoIndex = _.findIndex(state.songDetail.annotations,
+    // ['id', action.comment.annotation_id]);
+    //
+    // const firstHalf = state.songDetail.annotations.slice(0, annoIndex);
+    // const secondHalf = state.songDetail.annotations.slice(annoIndex + 1, state.songDetail.annotations.length)
+    // const anno = state.songDetail.annotations[annoIndex];
+    // if (anno.comments) {
+    //   anno.comments = [...anno.comments, action.comment];
+    // } else {
+    //   anno.comments = [action.comment];
+    // }
+    //
+    //   return Object.assign({}, state, {
+    //     songDetail: {annotations: [...firstHalf, anno, ...secondHalf]}
+    //
+    //   });
 
     default:
       return state;

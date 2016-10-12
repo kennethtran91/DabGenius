@@ -90,10 +90,14 @@ class SongDetail extends React.Component {
     const processedLyrics = [];
     let className;
     let annotations = this.props.song.annotations;
-    if (annotations) {
-      annotations.sort(function(a, b){
-          return a.start_index-b.start_index;
-      }); // sort annotations based on start index
+    if (!annotations) {
+        processedLyrics.push({content: this.props.song.lyrics, className:"not-annotated",
+        onClick: this.dummyFunction});
+        return processedLyrics;
+    } else {
+      // annotations.sort(function(a, b){
+      //     return a.start_index-b.start_index;
+      // }); // sort annotations based on start index
 
       let currentIndex = 0;
       while (annotations.length > 0 || currentIndex < this.props.song.lyrics.length) {
@@ -106,6 +110,7 @@ class SongDetail extends React.Component {
           }
           const endIndex = annotations[0].end_index;
           const annotatedContent = this.props.song.lyrics.slice(startIndex, endIndex);
+          // debugger
           processedLyrics.push({
             content: annotatedContent,
             className: className,
@@ -126,7 +131,7 @@ class SongDetail extends React.Component {
         }
       }
     }
-    return processedLyrics;
+    return processedLyrics || [this.props.song.lyrics];
   }
 
   render() {
