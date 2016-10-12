@@ -24,11 +24,11 @@ const Root = ({ store }) => {
 
           <IndexRoute component={Homepage} />
 
-          <Route path="api/songs/new"
+          <Route path="songs/new"
             component={NewSongFormContainer}
             onEnter={_redirectUnlessLoggedIn}></Route>
 
-          <Route path="api/songs/:songId"
+          <Route path="songs/:songId"
             component={SongDetailContainer}>
 
           </Route>
