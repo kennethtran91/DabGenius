@@ -9,7 +9,7 @@ export const UPVOTE_ANNOTATION =
 "UPVOTE_ANNOTATION";
 export const DOWNVOTE_ANNOTATION =
 "DOWNVOTE_ANNOTATION";
-export const RECEIVE_VOTE = "RECEIVE_VOTE";
+export const UPDATE_ANNOTATION = "UPDATE_ANNOTATION";
 
 export const createAnnotation = (annotation) => {
   return {
@@ -59,9 +59,9 @@ export const downvoteAnnotation = (id) => {
   };
 };
 
-export const receiveVote = (vote) => {
+export const updateAnnotation = (annotation) => {
   return {
-    type: RECEIVE_VOTE,
-    vote
+    type: UPDATE_ANNOTATION,
+    annotation
   };
 };
