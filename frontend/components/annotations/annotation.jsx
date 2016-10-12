@@ -101,6 +101,14 @@ class Annotation extends React.Component{
       });
       const add = (a, b) => { return a + b; };
       const score = votes.reduce(add, 0);
+      let scoreShow;
+      if (score < 0) {
+        scoreShow = <div className="red annotation-score">{score}</div>;
+      } else if (score === 0){
+        scoreShow = <div className="annotation-score">{score}</div>;
+      } else {
+        scoreShow = <div className="green annotation-score">{score}</div>;
+      }
 
         return (
           <div style={style} className="annotation-display">
@@ -111,7 +119,7 @@ class Annotation extends React.Component{
             <div className="annotation-score-container group">
 
               <button className="annotation-upvote" onClick={() => this.props.upvoteAnnotation(anno.id)}>Dope</button>
-              <div className="annotation-score">Score: {score}</div>
+              {scoreShow}
               <button className="annotation-downvote" onClick={() => this.props.downvoteAnnotation(anno.id)}>Nope</button>
 
             </div>
