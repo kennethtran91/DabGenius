@@ -6,26 +6,31 @@ class CommentForm extends React.Component{
     this.state = {showStatus: "", body: ""};
     this.updateBody = this.updateBody.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   updateBody(e) {
     this.setState({body: e.target.value});
   }
 
+  clearForm() {
+    this.setState({body: ""});
+  }
+
   handleSubmit(e) {
     const comment = {body: this.state.body, annotation_id: this.props.annotationId};
-    this.props.createComment(comment);
+    this.props.createComment(comment, this.clearForm);
   }
 
   render() {
     return (
-      <div className="comment-form">
+      <form onSubmit={this.handleSubmit} className="comment-form">
         <textarea className="comment-textarea"
           placeholder="Comment on this annotation!"
           onChange={this.updateBody}/>
-        <button className="comment-submit"
-          onClick={this.handleSubmit}>Submit</button>
-      </div>
+        <br/>
+        <button className="comment-submit">Submit</button>
+      </form>
     );
   }
 }

@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createComment: (comment) => dispatch(createComment(comment)),
+    createComment: (comment, callback) => dispatch(createComment(comment, callback)),
   };
 
 };

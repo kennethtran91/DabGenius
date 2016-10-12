@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentFormContainer from '../comments/comment_form_container';
+import Comment from '../comments/comment';
 
 class Annotation extends React.Component{
   constructor(props) {
@@ -10,16 +11,6 @@ class Annotation extends React.Component{
     this.handleCancel = this.handleCancel.bind(this);
     this.handleSave = this.handleSave.bind(this);
   }
-
-  componentWillReceiveProps() {
-    if (this.props.selectedAnnotation) {
-      this.props.requestAllComments(this.props.selectedAnnotation.id);
-    }
-  }
-
-  // componentDidMount() {
-  //   this.props.requestOneAnnotation(this.props.selectedAnnotation.id);
-  // }
 
   openForm(e) {
     e.preventDefault();
@@ -48,6 +39,11 @@ class Annotation extends React.Component{
       position: "absolute",
       top: this.props.annotationButtonPosition
     };
+
+    // const postStyle = {
+    //   position: "absolute",
+    //   top: this.props.annotationButtonPosition - 200
+    // };
 
     const annotationButton = () => {
       if (this.props.showStatus === "button") {
@@ -85,18 +81,29 @@ class Annotation extends React.Component{
       }
     };
 
-
     let that = this;
     const annotationPost = () => {
       const anno = that.props.selectedAnnotation;
       if (this.props.showStatus === "post") {
+        let commentsList;
+        let commentsHeader;
+        if (anno.comments) {
+          commentsList = anno.comments.map((comment, id) => {
+            return (
+              <Comment comment={comment} key={id}/>
+            );
+          });
+          commentsHeader = <h3 className="comments-header">Comments</h3>;
+        }
         return (
           <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>
             <br/>
             <p className="annotation-body">{anno.body}</p>
-            {anno.comments}
+            <hr className="line"/>
+            {commentsHeader}
             <CommentFormContainer annotationId={anno.id}/>
+            {commentsList}
           </div>
         );
       }

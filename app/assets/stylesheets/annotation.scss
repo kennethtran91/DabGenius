@@ -40,7 +40,7 @@
 .annotation-textarea {
   border: 1px solid #ccc;
   width: 250px;
-  height: 200px;
+  height: 180px;
   padding: 10px;
 }
 
@@ -59,4 +59,13 @@
 .annotation-display {
   border-left: 5px solid #99a7ee;
   padding-left: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.annotation-author {
+  font-weight: bold;
+}
+
+.line {
+  border-color: #99a7ee;
 }

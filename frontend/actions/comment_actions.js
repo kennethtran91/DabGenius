@@ -3,10 +3,11 @@ export const REQUEST_ALL_COMMENTS = "REQUEST_ALL_COMMENTS";
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const ADD_NEW_COMMENT = "ADD_NEW_COMMENT";
 
-export const createComment = (comment) => {
+export const createComment = (comment, callback) => {
   return {
     type: CREATE_COMMENT,
-    comment
+    comment,
+    callback
   };
 };
 
