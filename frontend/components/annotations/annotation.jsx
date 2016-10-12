@@ -50,7 +50,7 @@ class Annotation extends React.Component{
 
         return (
           <button style={style}
-            onClick={this.openForm}
+            onClick={this.openForm} 
             className="annotation-button">Enlighten us</button>
         );
       } else {

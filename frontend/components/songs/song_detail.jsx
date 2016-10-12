@@ -18,7 +18,7 @@ class SongDetail extends React.Component {
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
     this.props.requestAllAnnotations(this.props.params.songId);
-    // this.props.requestAllComments(this.props.params.songId);
+    window.scrollTo(0,0); // scrolls to the bottom?
   }
 
   handleAnnotationClick(annotation, e) {
@@ -87,7 +87,7 @@ class SongDetail extends React.Component {
   }
 
   processLyrics() {
-
+    const lyrics = this.props.song.lyrics;
     let processedLyrics = [];
     let startIndex = 0;
     const annotations = this.props.song.annotations;
@@ -96,13 +96,13 @@ class SongDetail extends React.Component {
     }); // sort annotations based on start index
 
     annotations.forEach((annotation) => {
-      processedLyrics.push(<span className="not-annotated">{this.props.song.lyrics.slice(startIndex, annotation.start_index)}</span>);
+      processedLyrics.push(<span className="not-annotated">{lyrics.slice(startIndex, annotation.start_index)}</span>);
 
-      processedLyrics.push(<span className="annotated" onClick={this.handleAnnotationClick.bind(null, annotation)}>{this.props.song.lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
+      processedLyrics.push(<span className="annotated" onClick={this.handleAnnotationClick.bind(null, annotation)}>{lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
       startIndex = annotation.end_index;
     });
 
-    processedLyrics.push(<span className="not-annotated">{this.props.song.lyrics.slice(startIndex, this.props.song.lyrics.length)}</span>);
+    processedLyrics.push(<span className="not-annotated">{lyrics.slice(startIndex, lyrics.length)}</span>);
     return processedLyrics ;
 
   }

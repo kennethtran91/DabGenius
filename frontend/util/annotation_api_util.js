@@ -25,3 +25,21 @@ export const fetchAllAnnotations = (id, success, error) => {
     error
   });
 };
+
+export const upvoteAnnotation = (id, success, error) => {
+  $.ajax({
+    url: `api/annotations/${id}/upvote`,
+    method: 'POST',
+    success,
+    error
+  });
+};
+
+export const downvoteAnnotation = (id, success, error) => {
+  $.ajax({
+    url: `api/annotations/${id}/downvote`,
+    method: 'POST',
+    success,
+    error
+  });
+};

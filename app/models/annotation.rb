@@ -15,4 +15,16 @@ class Annotation < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :annotation_id,
     class_name: 'Comment'
+
+  has_many :votes,
+    primary_key: :id,
+    foreign_key: :annotation_id,
+    class_name: 'Vote'
+
+  def updateVote(user, score)
+    vote = votes.find_or_create_by(user: user)
+    vote.value = score
+    vote.save!
+  end
+
 end

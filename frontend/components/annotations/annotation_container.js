@@ -1,8 +1,9 @@
 import React from 'react';
-import { createAnnotation, requestOneAnnotation } from '../../actions/annotation_actions';
+import { createAnnotation, requestOneAnnotation, upvoteAnnotation, downvoteAnnotation } from '../../actions/annotation_actions';
 import { connect } from 'react-redux';
 import Annotation from './annotation';
 import { requestAllComments } from '../../actions/comment_actions';
+
 
 const mapStateToProps = (state) => {
   return {
@@ -14,8 +15,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createAnnotation: (annotation) => dispatch(createAnnotation(annotation)),
+
     requestOneAnnotation: (id) => dispatch(requestOneAnnotation),
-    requestAllComments: (id) => dispatch(requestAllComments(id))
+
+    requestAllComments: (id) => dispatch(requestAllComments(id)),
+
+    upvoteAnnotation: (id) => dispatch(upvoteAnnotation(id)),
+
+    downvoteAnnotation: (id) => dispatch(downvoteAnnotation(id))
   };
 
 };

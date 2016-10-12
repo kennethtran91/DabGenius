@@ -11,7 +11,7 @@ class Homepage extends React.Component{
     return (
       <div className="homepage-container group">
         <div className="add-song-link-container">
-          <Link className="add-song-link" to="/api/songs/new">ADD NEW SONG</Link>
+          <Link className="add-song-link" to="/songs/new">ADD NEW SONG</Link>
         </div>
         <section>
           <section className="songs-list">

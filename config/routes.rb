@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :annotations, only: [:index]
     end
     resources :annotations, only: [:show, :create, :destroy] do
+      member do
+        post :upvote
+        post :downvote
+      end
       resources :comments, only: [:index, :create]
     end
   end

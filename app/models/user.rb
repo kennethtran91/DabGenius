@@ -23,6 +23,11 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: 'Comment'
 
+  has_many :votes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Vote'
+
   def self.generate_session_token
 		SecureRandom.urlsafe_base64(16)
 	end
