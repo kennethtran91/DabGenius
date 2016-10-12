@@ -47,7 +47,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Account creation/sign in established
   - [ ] OAuth with Facebook (move to later date)
   - [✓] Seed users (3)
-  - [ ] Review Phase 1
+  - [✓] Review Phase 1
 
 ### Phase 2: Create header/navigation and footer bars, homepage styling (1 day)
 **Objective**: Begin designing homepage layout with navigation bar and page coloring
@@ -56,7 +56,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Add search bar (currently non-functional)
   - [✓] Links in footer (1)
   - [✓] About info (need to develop)
-  - [ ] Review phase 2
+  - [✓] Review phase 2
 
 ### Phase 3: Songs (1.5 days)
 **Objective**: Add songs to the database.
@@ -65,7 +65,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Song form (currently nonfunctional)
   - [✓] File upload
   - [✓] Styling
-  - [ ] Review phase 3
+  - [✓] Review phase 3
 
 ### Phase 4: Annotations (2 days)
 **Objective**: Add ability to annotate songs.
@@ -73,20 +73,20 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Seed annotations
   - [✓] Annotation form
   - [✓] onSelection listeners to lyrics
-  - [ ] Styling
-  - [ ] Review phase 4
+  - [✓] Styling
+  - [✓] Review phase 4
 
 ### Phase 5: Comments (1 day)
 **Objective**: Add ability to comment on annotations.
-  - [ ] `Comment` model/controller
+  - [✓] `Comment` model/controller
   - [ ] Seed comments
-  - [ ] Comments form
-  - [ ] Styling
+  - [✓] Comments form
+  - [✓] Styling
   - [ ] Review phase 5
 
 ### Phase 6: Votes (.5 day)
 **Objective**: Add ability to vote on annotations.
-  - [ ] `Vote` model/controller
+  - [✓] `Vote` model/controller
   - [ ] Seed votes
   - [ ] Vote buttons
   - [ ] Review phase 6

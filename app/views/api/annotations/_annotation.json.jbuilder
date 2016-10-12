@@ -6,5 +6,5 @@ end
 
 json.votes annotation.votes do |vote|
   json.value vote.value
-  json.user vote.user
+  json.user vote.user.username
 end

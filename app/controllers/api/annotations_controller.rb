@@ -24,12 +24,14 @@ class Api::AnnotationsController < ApplicationController
 
   def upvote
     @annotation = Annotation.find(params[:id])
-    @annotation.updateVote(params[:user], 1)
+    @annotation.updateVote(current_user, 1)
+    render :show
   end
 
   def downvote
     @annotation = Annotation.find(params[:id])
-    @annotation.updateVote(params[:user], -1)
+    @annotation.updateVote(current_user, -1)
+    render :show
   end
 
   def annotation_params

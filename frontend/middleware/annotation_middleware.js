@@ -1,5 +1,5 @@
 import { CREATE_ANNOTATION, addNewAnnotation, REQUEST_ALL_ANNOTATIONS, receiveAllAnnotations, REQUEST_ONE_ANNOTATION, receiveOneAnnotation,
-UPVOTE_ANNOTATION, DOWNVOTE_ANNOTATION } from '../actions/annotation_actions';
+UPVOTE_ANNOTATION, DOWNVOTE_ANNOTATION, receiveVote } from '../actions/annotation_actions';
 import * as API from '../util/annotation_api_util';
 
 const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
@@ -17,11 +17,13 @@ const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
       return next(action);
 
     case UPVOTE_ANNOTATION:
-      API.upvoteAnnotation(action.id)
+      successCallback = (vote) => dispatch(receiveVote(vote));
+      API.upvoteAnnotation(action.id, successCallback)
       return next(action);
 
     case DOWNVOTE_ANNOTATION:
-      API.downvoteAnnotation(action.id)
+      successCallback = (vote) => dispatch(receiveVote(vote));
+      API.downvoteAnnotation(action.id, successCallback)
       return next(action);
 
     default:

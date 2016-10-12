@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Annotation from './annotation';
 import { requestAllComments } from '../../actions/comment_actions';
 
-
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,

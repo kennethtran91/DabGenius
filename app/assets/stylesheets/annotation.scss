@@ -69,3 +69,24 @@
 .line {
   border-color: #99a7ee;
 }
+
+.annotation-upvote {
+  padding: 1px 3px;
+  color: #0c0;
+  float: left;
+  margin: 0 3px;
+  border: 3px solid #0c0;
+}
+
+.annotation-score {
+  float: left;
+  padding: 4px 3px;
+}
+
+.annotation-downvote {
+  padding: 1px 3px;
+  color: #f00;
+  float: left;
+  margin: 0 3px;
+  border: 3px solid #f00;
+}

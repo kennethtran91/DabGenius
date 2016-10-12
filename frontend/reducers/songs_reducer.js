@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_ONE_SONG, ADD_NEW_SONG } from '../actions/song_actions';
-import { ADD_NEW_ANNOTATION } from '../actions/annotation_actions';
+import { ADD_NEW_ANNOTATION, RECEIVE_VOTE } from '../actions/annotation_actions';
 import { ADD_NEW_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_ERRORS } from '../actions/session_actions';
 import merge from 'lodash/merge';
@@ -26,6 +26,15 @@ const SongsReducer = (state = defaultState, action) => {
       return merge({}, state, {
         songDetail: {annotations: [...state.songDetail.annotations, action.annotation]}
       });
+
+    // case UPDATE_ANNOTATION:
+    //
+    //   return merge({}, state, {
+    //     songDetail: {annotations: }
+    //   });
+    // find the annoations array
+    // map it to a new array same as previous with one replaced
+    // return state dup with new annotation
 
     case ADD_NEW_COMMENT:
       const annoIndex = _.findIndex(state.songDetail.annotations,

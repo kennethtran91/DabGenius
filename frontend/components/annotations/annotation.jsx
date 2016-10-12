@@ -50,7 +50,7 @@ class Annotation extends React.Component{
 
         return (
           <button style={style}
-            onClick={this.openForm} 
+            onClick={this.openForm}
             className="annotation-button">Enlighten us</button>
         );
       } else {
@@ -95,11 +95,26 @@ class Annotation extends React.Component{
           });
           commentsHeader = <h3 className="comments-header">Comments</h3>;
         }
+
+      const votes = anno.votes.map((vote) => {
+        return vote.value;
+      });
+      const add = (a, b) => { return a + b; };
+      const score = votes.reduce(add, 0);
+
         return (
           <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>
             <br/>
             <p className="annotation-body">{anno.body}</p>
+            <br/>
+            <div className="annotation-score-container group">
+
+              <button className="annotation-upvote" onClick={() => this.props.upvoteAnnotation(anno.id)}>Dope</button>
+              <div className="annotation-score">Score: {score}</div>
+              <button className="annotation-downvote" onClick={() => this.props.downvoteAnnotation(anno.id)}>Nope</button>
+
+            </div>
             <hr className="line"/>
             {commentsHeader}
             <CommentFormContainer annotationId={anno.id}/>

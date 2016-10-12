@@ -5,7 +5,7 @@ class SongDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showStatus: "", startIndex: 0, endIndex: 0,
-    lyrics: "", selectedAnnotation: null, annotationButtonPosition: null,
+    lyrics: "", selectedAnnotationId: null, annotationButtonPosition: null,
     showList: false};
     this.showAnnotationButton = this.showAnnotationButton.bind(this);
     this.resetState = this.resetState.bind(this);
@@ -21,8 +21,8 @@ class SongDetail extends React.Component {
     window.scrollTo(0,0); // scrolls to the bottom?
   }
 
-  handleAnnotationClick(annotation, e) {
-    this.setState({selectedAnnotation: annotation, annotationButtonPosition: e.pageY,
+  handleAnnotationClick(id, e) {
+    this.setState({selectedAnnotationId: id, annotationButtonPosition: e.pageY,
     showStatus: "post"});
   }
 
@@ -53,7 +53,7 @@ class SongDetail extends React.Component {
 
   resetState() {
     this.setState({showStatus: "", startIndex: 0, endIndex: 0,
-    lyrics: "", selectedAnnotation: null, annotationButtonPosition: null});
+    lyrics: "", selectedAnnotationId: null, annotationButtonPosition: null});
   }
 
   dummyFunction() {
@@ -98,7 +98,7 @@ class SongDetail extends React.Component {
     annotations.forEach((annotation) => {
       processedLyrics.push(<span className="not-annotated">{lyrics.slice(startIndex, annotation.start_index)}</span>);
 
-      processedLyrics.push(<span className="annotated" onClick={this.handleAnnotationClick.bind(null, annotation)}>{lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
+      processedLyrics.push(<span className="annotated" onClick={this.handleAnnotationClick.bind(null, annotation.id)}>{lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
       startIndex = annotation.end_index;
     });
 
@@ -110,7 +110,10 @@ class SongDetail extends React.Component {
   render() {
 
     if (this.props.song) {
-      const annotation =this.state.selectedAnnotation || {} ;
+      const annotation =this.props.song.annotations.find( (annotation) => {
+
+        return annotation.id === this.state.selectedAnnotationId;
+      }) || {} ;
       return (
         <section className="song-detail-container group">
           <div className="song-banner">

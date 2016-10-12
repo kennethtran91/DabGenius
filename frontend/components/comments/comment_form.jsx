@@ -18,6 +18,7 @@ class CommentForm extends React.Component{
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     const comment = {body: this.state.body, annotation_id: this.props.annotationId};
     this.props.createComment(comment, this.clearForm);
   }
