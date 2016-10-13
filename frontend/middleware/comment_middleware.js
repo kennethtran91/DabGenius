@@ -8,7 +8,9 @@ const CommentMiddleware = ({ getState, dispatch }) => next => action => {
     case CREATE_COMMENT:
       successCallback = (comment) => {
          dispatch(addNewComment(comment));
+         action.callback();
       };
+
       API.createComment(action.comment, successCallback);
       return next(action);
 

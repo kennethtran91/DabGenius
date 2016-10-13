@@ -49,6 +49,19 @@ class Api::SongsController < ApplicationController
     render :show
   end
 
+  def search
+    # if params[:query].present?
+    #   @songs = Song.where("title ~ ?", params[:query])
+    # else
+    #   @songs = Song.none
+    # end
+    #
+    # respond_to do |format|
+    #   format.html { render :search }
+    #   format.json { render :search }
+    # end
+  end
+
   private
 
   def song_params

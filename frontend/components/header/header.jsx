@@ -1,11 +1,13 @@
 import React from 'react';
 import SessionModal from '../modal/session_modal';
 import { Link } from 'react-router';
+import SongsSearchContainer from './songs_search_container';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
   }
+
 
   render () {
     let greeting = null;
@@ -25,8 +27,8 @@ class Header extends React.Component {
     return (
       <header className="header">
         <nav className="header-nav group">
-          <div className="search-container">
-            <input className="search-bar" type="text" placeholder="Search for a song..."></input>
+          <div className="search-container group">
+            <SongsSearchContainer/>
             <img src= "http://simpleicon.com/wp-content/uploads/active-search.png" className="mag-glass"></img>
           </div>
           <div className="header-logo-container">

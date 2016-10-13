@@ -96,6 +96,7 @@ class Annotation extends React.Component{
       });
       const add = (a, b) => { return a + b; };
       const score = votes.reduce(add, 0);
+      
       let scoreShow;
       if (score < 0) {
         scoreShow = <div className="red annotation-score">{score}</div>;
