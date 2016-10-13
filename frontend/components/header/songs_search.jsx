@@ -1,21 +1,28 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+import SongSearchItem from './song_search_item';
 
 class SongsSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {searchString: ''};
     this.updateSearch = this.updateSearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   updateSearch(e) {
     this.setState({searchString: e.target.value});
   }
-// <input className="search-bar" type="text" placeholder="Search for a song..."></input>
+
+  clearSearch() {
+    this.setState({searchString: ''});
+  }
+
   render() {
-    let songs = this.props.songs;
+    let songs = [];
     let searchString = this.state.searchString.trim().toLowerCase();
     if (searchString.length > 0) {
-      songs = songs.filter((song) => {
+      songs = this.props.songs.filter((song) => {
         return song.title.toLowerCase().match(searchString);
       });
     }
@@ -26,7 +33,9 @@ class SongsSearch extends React.Component {
           placeholder="Search for a song by title"/>
         <ul>
           {songs.map((song) => {
-            return <li className="search-result">{song.title} by {song.artist}</li>;
+            return(
+              <SongSearchItem song={song} onClick={this.clearSearch}/>
+            );
           })}
         </ul>
       </div>
