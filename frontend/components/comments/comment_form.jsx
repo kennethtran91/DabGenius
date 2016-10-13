@@ -28,7 +28,8 @@ class CommentForm extends React.Component{
       <form onSubmit={this.handleSubmit} className="comment-form">
         <textarea className="comment-textarea"
           placeholder="Comment on this annotation!"
-          onChange={this.updateBody}/>
+          onChange={this.updateBody}
+          value={this.state.body}/>
         <br/>
         <button className="comment-submit">Submit</button>
       </form>

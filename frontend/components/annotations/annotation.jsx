@@ -83,7 +83,7 @@ class Annotation extends React.Component{
         let commentsList;
         let commentsHeader;
         if (anno.comments) {
-          commentsList = anno.comments.map((comment, id) => {
+          commentsList = anno.comments.reverse().map((comment, id) => {
             return (
               <Comment comment={comment} key={id}/>
             );
