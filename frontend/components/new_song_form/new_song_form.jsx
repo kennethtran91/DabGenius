@@ -42,7 +42,9 @@ class NewSongForm extends React.Component {
     formData.append("song[artist]", this.state.artist);
     formData.append("song[title]", this.state.title);
     formData.append("song[lyrics]", this.state.lyrics);
-    formData.append("song[image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("song[image]", this.state.imageFile);
+    }
     this.props.createSong(formData, this.returnToHome);
   }
 
