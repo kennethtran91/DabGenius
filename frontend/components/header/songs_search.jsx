@@ -8,6 +8,7 @@ class SongsSearch extends React.Component {
     this.state = {searchString: ''};
     this.updateSearch = this.updateSearch.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   updateSearch(e) {

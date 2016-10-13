@@ -1,13 +1,18 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link } from 'react-router';
 
-const handleClick = (router, url) => (
-  () => router.push(url)
-);
+class SongSearchItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-const SongSearchItem = ({ song, router }) => (
-  <li className="search-result" key={song.id}
-    onClick={handleClick(router, `/songs/${song.id}`)}>{song.title} by {song.artist}</li>
-);
+  render() {
+    return (
+      <li className="search-result" onClick={this.props.onClick} >
+        <Link to={`songs/${this.props.song.id}`}>{this.props.song.title} by {this.props.song.artist}</Link>
+      </li>
+    );
+  }
+}
 
-export default withRouter(SongSearchItem);
+export default SongSearchItem;
