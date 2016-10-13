@@ -79,7 +79,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 ### Phase 5: Comments (1 day)
 **Objective**: Add ability to comment on annotations.
   - [✓] `Comment` model/controller
-  - [ ] Seed comments
+  - [✓] Seed comments
   - [✓] Comments form
   - [✓] Styling
   - [ ] Review phase 5
@@ -88,7 +88,7 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 **Objective**: Add ability to vote on annotations.
   - [✓] `Vote` model/controller
   - [ ] Seed votes
-  - [ ] Vote buttons
+  - [✓] Vote buttons
   - [ ] Review phase 6
 
 ### Phase 7: Search bar (1 day)

@@ -40,11 +40,6 @@ class Annotation extends React.Component{
       top: this.props.annotationButtonPosition
     };
 
-    // const postStyle = {
-    //   position: "absolute",
-    //   top: this.props.annotationButtonPosition - 200
-    // };
-
     const annotationButton = () => {
       if (this.props.showStatus === "button") {
 
@@ -140,7 +135,6 @@ class Annotation extends React.Component{
       </div>
     );
   }
-
 }
 
 export default Annotation;

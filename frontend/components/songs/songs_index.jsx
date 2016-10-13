@@ -62,7 +62,6 @@ export default class SongsIndex extends React.Component {
           </section>
 
           <section className=" right-column">
-
             <ul className="other-songs group">
               <section className="about-container group">
                 <p className="about-info">

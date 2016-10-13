@@ -18,19 +18,17 @@ const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
 
     case UPVOTE_ANNOTATION:
       successCallback = (annotation) => dispatch(updateAnnotation(annotation));
-      API.upvoteAnnotation(action.id, successCallback)
+      API.upvoteAnnotation(action.id, successCallback);
       return next(action);
 
     case DOWNVOTE_ANNOTATION:
       successCallback = (annotation) => dispatch(updateAnnotation(annotation));
-      API.downvoteAnnotation(action.id, successCallback)
+      API.downvoteAnnotation(action.id, successCallback);
       return next(action);
 
     default:
       return next(action);
   }
-
-
 };
 
 export default AnnotationMiddleware;

@@ -27,13 +27,6 @@ const SongsReducer = (state = defaultState, action) => {
         songDetail: {annotations: [...state.songDetail.annotations, action.annotation]}
       });
 
-    // case UPDATE_ANNOTATION:
-    //
-    //
-    // find the annoations array
-    // map it to a new array same as previous with one replaced
-    // return state dup with new annotation
-
     case UPDATE_ANNOTATION:
       const annotations = state.songDetail.annotations;
       const annoIndex = _.findIndex(annotations, ['id', action.annotation.id]);
@@ -59,7 +52,6 @@ const SongsReducer = (state = defaultState, action) => {
 
       return merge({}, state, {
         songDetail: {annotations: [...firstPortion, newAnnotation, ...secondPortion]}
-
       });
 
     default:
