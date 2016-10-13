@@ -89,16 +89,18 @@ class SongDetail extends React.Component {
   processLyrics() {
     const lyrics = this.props.song.lyrics;
     let processedLyrics = [];
-    let startIndex = 0;
     const annotations = this.props.song.annotations;
     annotations.sort(function(a, b){
         return a.start_index-b.start_index;
     }); // sort annotations based on start index
 
+    let startIndex = 0;
     annotations.forEach((annotation) => {
       processedLyrics.push(<span className="not-annotated">{lyrics.slice(startIndex, annotation.start_index)}</span>);
 
-      processedLyrics.push(<span className="annotated" onClick={this.handleAnnotationClick.bind(null, annotation.id)}>{lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
+      processedLyrics.push(<span className="annotated"
+      onClick={this.handleAnnotationClick.bind(null, annotation.id)}>
+      {lyrics.slice(annotation.start_index, annotation.end_index)}</span>);
       startIndex = annotation.end_index;
     });
 

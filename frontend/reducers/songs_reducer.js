@@ -48,11 +48,11 @@ const SongsReducer = (state = defaultState, action) => {
       ['id', action.comment.annotation_id]);
 
       const firstPortion = state.songDetail.annotations.slice(0, annoIdx);
-      const secondPortion = state.songDetail.annotations.slice(annoIdx + 1)
+      const secondPortion = state.songDetail.annotations.slice(annoIdx + 1);
       const anno = state.songDetail.annotations[annoIdx];
       let newAnnotation;
       if (anno.comments) {
-        newAnnotation = merge({}, anno, {comments: [...anno.comments, action.comment]});
+        newAnnotation = merge({}, anno, {comments: [action.comment, ...anno.comments]});
       } else {
         newAnnotation = merge({}, anno, {comments: [action.comment]});
       }
