@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
 drizzy = User.create!(username: "drizzy", password: "rapgod")
@@ -1217,8 +1210,28 @@ start_index: 241, end_index: 250, body: "hey pick up the phone!!")
 anno3 = Annotation.create!(song_id: under_pressure.id, author_id: u2.id,
 start_index: 308, end_index: 316, body: "OOOOOH YEAAAAA")
 
-anno3 = Annotation.create!(song_id: wet_dreamz.id, author_id: u3.id,
-start_index: 1513, end_index: 1562, body: "oooh damn called his bluff!")
+anno4 = Annotation.create!(song_id: come.id, author_id: u4.id,
+start_index: 262, end_index: 271, body: "EAST COAST BEAST COAST")
 
-anno3 = Annotation.create!(song_id: panda.id, author_id: u4.id,
-start_index: 400, end_index:489, body: "why is this song so repetitive!??!?!")
+anno5 = Annotation.create!(song_id: panda.id, author_id: u4.id,
+start_index: 400, end_index: 489, body: "why is this song so repetitive!??!?!")
+
+anno6 = Annotation.create!(song_id: power_trip.id, author_id: u5.id,
+start_index: 590, end_index: 627, body: "OH MY GRACIOUS!!")
+
+anno7 = Annotation.create!(song_id: hotline.id, author_id: u6.id,
+start_index: 94, end_index: 126, body: "Drake's got worse moves than my grandpa!!")
+
+Comment.destroy_all
+
+Comment.create!(author_id: superman.id, annotation_id: anno6.id,
+body: "easy money baby")
+
+Comment.create!(author_id: soulja.id, annotation_id: anno5.id,
+body: "some people just can't appreciate genius")
+
+Comment.create!(author_id: drizzy.id, annotation_id: anno4.id,
+body: "word, NYC app academy > SF CRAP academy")
+
+Comment.create!(author_id: drizzy.id, annotation_id: anno7.id,
+body: "Say that to my FACE")
