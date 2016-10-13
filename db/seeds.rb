@@ -305,7 +305,7 @@ Bitch nigga pull up ya panty
 Hope you killers understand me
 
 Panda, panda, panda, panda, panda, panda, panda...
-", author_id: soulja.id)
+", author_id: soulja.id, image: File.open('app/assets/images/panda.jpg'))
 
 finish_line = Song.create!(artist: "Chance the Rapper", title: "Finish Line",
 author_id: u1.id, image: File.open('app/assets/images/coloring-book.jpg'), lyrics:

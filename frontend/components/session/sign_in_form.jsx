@@ -98,7 +98,7 @@ class SignInForm extends React.Component{
               ref = "usernameInput"
               className="session-input"
               type="text"
-              placeholder="username..."
+              placeholder="username... (case sensitive)"
               value={this.state.username}></input>
             <br></br>
             <input onChange={this.updatePassword}

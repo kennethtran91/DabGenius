@@ -7,12 +7,6 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
-  def new
-    @song = Song.new
-
-    render :new
-  end
-
   def create
     @song = current_user.songs.new(song_params)
 
@@ -21,11 +15,6 @@ class Api::SongsController < ApplicationController
     else
       render json: @song.errors.full_messages, status: 422
     end
-  end
-
-  def edit
-    @song = Song.find(params[:id])
-    render :edit
   end
 
   def update

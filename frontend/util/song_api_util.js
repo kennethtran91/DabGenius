@@ -38,13 +38,3 @@ export const createSong = (song, success, error) => {
 //     error
 //   });
 // };
-
-
-// export const deleteSong = (id, success, error) => {
-//   $.ajax({
-//     url: `/api/songs/${id}`,
-//     method: 'DELETE',
-//     success,
-//     error
-//   });
-// };

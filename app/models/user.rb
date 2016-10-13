@@ -53,6 +53,16 @@ class User < ActiveRecord::Base
 		self.session_token
 	end
 
+  def score
+    base_score = annotations.length * 5
+    anno_scores = 0
+    annotations.each do |anno|
+      anno_scores += anno.score
+    end
+
+    base_score + anno_scores
+  end
+
 	private
 
 	def ensure_session_token

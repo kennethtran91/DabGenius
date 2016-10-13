@@ -27,4 +27,13 @@ class Annotation < ActiveRecord::Base
     vote.save!
   end
 
+  def score
+    vote_values = votes.map { |vote| vote.value }
+    if vote_values.empty?
+      0
+    else
+      vote_values.inject(:+)
+    end
+  end
+
 end

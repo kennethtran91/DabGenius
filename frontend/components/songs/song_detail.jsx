@@ -12,7 +12,6 @@ class SongDetail extends React.Component {
     this.processLyrics = this.processLyrics.bind(this);
     this.handleAnnotationClick = this.handleAnnotationClick.bind(this);
     this.setAnnotationStatus = this.setAnnotationStatus.bind(this);
-
   }
 
   componentDidMount() {
@@ -137,7 +136,6 @@ class SongDetail extends React.Component {
             <img className="pro-pic"
               src={this.props.song.image_url}></img>
           </div>
-
           <section className="lyrics-container">
 
             <h3 className="lyrics-header">
