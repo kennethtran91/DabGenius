@@ -21,6 +21,13 @@ class SongDetail extends React.Component {
     window.scrollTo(0,0); // scrolls to the bottom?
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.params.songId != this.props.params.songId) {
+      this.props.requestOneSong(newProps.params.songId);
+      this.props.requestAllAnnotations(newProps.params.songId);
+    }
+  }
+
   handleAnnotationClick(id, e) {
     this.setState({selectedAnnotationId: id, annotationButtonPosition: e.pageY,
     showStatus: "post"});
