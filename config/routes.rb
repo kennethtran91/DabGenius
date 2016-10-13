@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
     resources :songs, only: [:index, :new, :create, :edit, :show, :update, :destroy] do
-      get "search", on: :collection
       resources :annotations, only: [:index]
     end
     resources :annotations, only: [:show, :create, :destroy] do

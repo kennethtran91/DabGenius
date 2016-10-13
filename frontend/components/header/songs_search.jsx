@@ -34,7 +34,7 @@ class SongsSearch extends React.Component {
         <ul>
           {songs.map((song) => {
             return(
-              <SongSearchItem song={song} onClick={this.clearSearch} />
+              <SongSearchItem song={song} onClick={this.clearSearch} key={song.id}/>
             );
           })}
         </ul>

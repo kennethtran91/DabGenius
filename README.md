@@ -82,19 +82,18 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] Seed comments
   - [✓] Comments form
   - [✓] Styling
-  - [ ] Review phase 5
+  - [✓] Review phase 5
 
 ### Phase 6: Votes (.5 day)
 **Objective**: Add ability to vote on annotations.
   - [✓] `Vote` model/controller
-  - [ ] Seed votes
   - [✓] Vote buttons
   - [ ] Review phase 6
 
 ### Phase 7: Search bar (1 day)
 **Objective**: Add ability for users to search for songs based on title or artist.
-  - [ ] Fetching songs from search
-  - [ ] Dynamic search results
+  - [✓] Fetching songs from search
+  - [✓] Dynamic search results
   - [ ] Review phase 7
 
 ### Bonus Features

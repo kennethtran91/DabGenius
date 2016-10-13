@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentFormContainer from '../comments/comment_form_container';
 import Comment from '../comments/comment';
+import TimeAgo from 'react-timeago';
 
 class Annotation extends React.Component{
   constructor(props) {
@@ -96,7 +97,7 @@ class Annotation extends React.Component{
       });
       const add = (a, b) => { return a + b; };
       const score = votes.reduce(add, 0);
-      
+
       let scoreShow;
       if (score < 0) {
         scoreShow = <div className="red annotation-score">{score}</div>;
@@ -109,6 +110,7 @@ class Annotation extends React.Component{
         return (
           <div style={style} className="annotation-display">
             <h1 className="annotation-author">Annotation by: {anno.author}</h1>
+            <TimeAgo className="timeago" date={anno.created_at}></TimeAgo>
             <br/>
             <p className="annotation-body">{anno.body}</p>
             <br/>

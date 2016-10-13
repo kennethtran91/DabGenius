@@ -8,7 +8,7 @@ class SongSearchItem extends React.Component {
 
   render() {
     return (
-      <li className="search-result" onClick={this.props.onClick} >
+      <li className="search-result" onClick={this.props.onClick} key={this.props.song.id} >
         <Link to={`songs/${this.props.song.id}`}>{this.props.song.title} by {this.props.song.artist}</Link>
       </li>
     );
