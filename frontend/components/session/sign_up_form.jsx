@@ -42,6 +42,12 @@ class SignUpForm extends React.Component{
 
     return (
       <div className="session-form group">
+        <a href='/auth/facebook/callback' className="facebook-auth">
+          <div className="facebook-logo"></div>
+          <p>Sign up with Facebook</p>
+        </a>
+        <br/>
+        <p> or </p>
         <form className="session-form" onSubmit={this.handleSubmit}>
           <h2 className="session-form-header">SIGN UP</h2>
           <br></br>
