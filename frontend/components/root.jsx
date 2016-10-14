@@ -16,6 +16,8 @@ const Root = ({ store }) => {
     }
   };
 
+  const redirectToRoot = (nextState, replace) => replace("/");
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -32,9 +34,10 @@ const Root = ({ store }) => {
 
           </Route>
         </Route>
+        <Route path="_=_" component={App} onEnter={ redirectToRoot }/>
       </Router>
     </Provider>
-  )
+  );
 };
 
 export default Root;

@@ -12,7 +12,7 @@
   background-color: #292929;
   color: #ffff64;
   width: 300px;
-  height: 300px;
+  height: 325px;
   position: fixed;
   margin: auto;
 }
@@ -23,15 +23,12 @@
 }
 
 .session-form-header {
-  position: absolute;
-  left: 27%;
-  font-size: 40px;
-  top: -7%;
+  font-size: 26px;
+  text-align: center;
 }
 
 .session-form-input-container {
   background-color: rgba(153,153,153,.09);
-  // margin-top: 10px;
   padding: 0px 5px;
   border: 2px solid #444;
   border-radius: 3px;
@@ -44,7 +41,7 @@
   border: 2px solid #444;
   padding-left: 5px;
   color: #fff;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px;
   font-size: 16px;
   border-radius: 3px;
   text-align: center;
@@ -75,4 +72,8 @@
   float: right;
   margin-top: 12px;
   font-size: 14px;
+}
+
+.facebook-logo {
+  border-radius: 5px;
 }

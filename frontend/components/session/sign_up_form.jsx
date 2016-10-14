@@ -42,30 +42,26 @@ class SignUpForm extends React.Component{
 
     return (
       <div className="session-form group">
-        <a href='/auth/facebook/callback' className="facebook-auth">
-          <div className="facebook-logo"></div>
-          <p>Sign up with Facebook</p>
+        <a href="/auth/facebook" className="facebook-login">
+          <img className="facebook-logo" src={window.fbLoginButton}/>
         </a>
         <br/>
-        <p> or </p>
         <form className="session-form" onSubmit={this.handleSubmit}>
           <h2 className="session-form-header">SIGN UP</h2>
-          <br></br>
           <ul className="session-errors">
             {errors}
           </ul>
-          <br></br>
           <div className="session-form-input-container">
             <input onChange={this.updateUsername}
               ref="usernameInput"
               className="session-input"
               type="text"
-              placeholder="username..."></input>
+              placeholder="username"></input>
             <br></br>
             <input onChange={this.updatePassword}
               className="session-input"
               type="password"
-              placeholder="password..."></input>
+              placeholder="password"></input>
           </div>
           <br></br>
           <br></br>

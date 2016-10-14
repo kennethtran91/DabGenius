@@ -1,17 +1,19 @@
-<head>
-  <script type="text/javascript">
-  <% if logged_in? %>
-    window.currentUser = <%= render("api/users/user.json.jbuilder",
-      user: current_user).html_safe %>
-  <% end %>
-  </script>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-  <link async href="http://fonts.googleapis.com/css?family=Anton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 
-</head>
+<script type="text/javascript">
+<% if logged_in? %>
+  window.currentUser = <%= render("api/users/user.json.jbuilder",
+    user: current_user).html_safe %>
+<% end %>
+
+window.fbLoginButton = "<%= image_url('login-with-facebook') %>";
+</script>
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link async href="http://fonts.googleapis.com/css?family=Anton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+
 
 
 
