@@ -9,8 +9,8 @@ const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   SongsMiddleware,
   AnnotationMiddleware,
-  CommentMiddleware,
-  createLogger()
+  CommentMiddleware
+  // createLogger()
 );
 
 export default RootMiddleware;
