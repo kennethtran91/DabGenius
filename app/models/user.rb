@@ -38,19 +38,6 @@ class User < ActiveRecord::Base
 		user.password_is?(password) ? user : nil
 	end
 
-  # def self.find_or_create_by_auth_hash(auth_hash)
-  #   user = User.find_by(facebook_uid: auth_hash[:uid])
-  #
-  #   if user.nil?
-  #     user = User.create!(
-  #     facebook_uid: auth_hash[:uid],
-  #     name: auth_hash[:info][:name]
-  #     )
-  #   end
-  #
-  #   user
-  # end
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider

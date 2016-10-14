@@ -86,7 +86,7 @@ class SignInForm extends React.Component{
 
     return (
       <div className="session-form group">
-        <a href='/auth/facebook/callback' className="facebook-login">
+        <a href='/auth/facebook' className="facebook-login">
           <div className="facebook-logo"></div>
           <p>Sign in with Facebook</p>
         </a>

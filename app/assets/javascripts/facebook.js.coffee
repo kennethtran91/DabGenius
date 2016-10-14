@@ -15,7 +15,7 @@ window.fbAsyncInit = ->
     FB.login (response) ->
       window.location = '/auth/facebook/callback' if response.authResponse
 
-  $('#sign_out').click (e) ->
+  $('#logout').click (e) ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
     true

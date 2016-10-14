@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
   def omni_create
     @user = User.from_omniauth(env["omniauth.auth"])
     login(@user)
-    redirect_to root_path
+    redirect_to root_url
   end
 
 	def destroy
