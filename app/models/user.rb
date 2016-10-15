@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
     annotations.each do |anno|
       anno_scores += anno.score
     end
-    base_score + anno_scores
+    base_score + anno_scores + 100
   end
 
 	private

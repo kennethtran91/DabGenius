@@ -45,24 +45,24 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
   - [✓] `APIUtil` for API interaction
   - [✓] Redux cycle established for front end authentication
   - [✓] Account creation/sign in established
-  - [ ] OAuth with Facebook (move to later date)
-  - [✓] Seed users (3)
+  - [✓] OAuth with Facebook
+  - [✓] Seed users
   - [✓] Review Phase 1
 
 ### Phase 2: Create header/navigation and footer bars, homepage styling (1 day)
 **Objective**: Begin designing homepage layout with navigation bar and page coloring
   - [✓] Navigation bar
   - [✓] Logo
-  - [✓] Add search bar (currently non-functional)
-  - [✓] Links in footer (1)
-  - [✓] About info (need to develop)
+  - [✓] Add search bar
+  - [✓] Links in footer
+  - [✓] About info
   - [✓] Review phase 2
 
 ### Phase 3: Songs (1.5 days)
 **Objective**: Add songs to the database.
   - [✓] `Song` model/controller
-  - [✓] Seed songs (3)
-  - [✓] Song form (currently nonfunctional)
+  - [✓] Seed songs
+  - [✓] Song form
   - [✓] File upload
   - [✓] Styling
   - [✓] Review phase 3
@@ -88,14 +88,10 @@ favorite songs and share their thoughts with the world. By the end of week 9, `D
 **Objective**: Add ability to vote on annotations.
   - [✓] `Vote` model/controller
   - [✓] Vote buttons
-  - [ ] Review phase 6
+  - [✓] Review phase 6
 
 ### Phase 7: Search bar (1 day)
 **Objective**: Add ability for users to search for songs based on title or artist.
   - [✓] Fetching songs from search
   - [✓] Dynamic search results
-  - [ ] Review phase 7
-
-### Bonus Features
-  - [ ] Add song player so they can listen as they read the lyrics
-  - [ ] Allow users to create own tracks
+  - [✓] Review phase 7

@@ -8,10 +8,11 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="footer">
-        <nav className="footer-nav">
+        <nav className="footer-nav group">
           <ul className="footer-links">
             <li>
-              <a href="https://github.com/jd479/DabGenius">Github</a>
+              <a href="https://github.com/jd479/DabGenius">
+                <img src={window.github} className="github-logo"/></a>
             </li>
           </ul>
         </nav>

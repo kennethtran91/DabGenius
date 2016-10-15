@@ -1,5 +1,5 @@
 .footer {
-  background-color: #222;
+  background-color: #797777;
   color: #ccc;
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
@@ -14,8 +14,14 @@
 .footer-links a {
   padding: 0px 8px;
   border-right: 1px solid #999;
+  height: inherit;
 }
 
 .footer-links a:first-child {
   border-left: 1px solid #999;
+}
+
+.github-logo {
+  width: 100px;
+  vertical-align: middle;
 }
