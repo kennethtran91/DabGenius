@@ -44,7 +44,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 8px;
+  top: 5px;
   right: 5px;
 }
 
@@ -61,4 +61,8 @@
   position: relative;
   right: 50%;
   top: 10px;
+}
+
+.logo:hover {
+  color: cornflowerblue;
 }
