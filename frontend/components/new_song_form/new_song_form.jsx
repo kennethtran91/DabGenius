@@ -61,7 +61,7 @@ class NewSongForm extends React.Component {
       <section className="new-song-form-container">
         <form onSubmit={this.handleSubmit} className="new-song-form">
           <h2 className="new-song-header">Create a new song!</h2>
-          <h3>Primary info (all fields required)</h3>
+          <h3>Primary info (image optional but recommended)</h3>
           <hr/>
           <ul className="song-form-error">
             {errors}

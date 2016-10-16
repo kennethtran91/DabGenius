@@ -1,97 +1,88 @@
 # Dab Genius
 
-[Heroku Link][heroku]
+[Dab Genius live][heroku]
 
-[heroku]: https://dab-genius.herokuapp.com/
+[heroku]: http://www.dabgenius.us/
 
-## Description:
-Dab Genius is a web application that allows its users to annotate their
-favorite songs and share their thoughts with the world. By the end of week 9, `Dab Genius` will satisfy the following:
+Rap Genius inspired `Dab Genius` is a full-stack web application that that incorporates:
+  0. Ruby on Rails
+  0. FaceBook's React.js
+  0. Redux
+  0. PostgreSQL
 
-### Minimum Viable Product:
-  1. Hosting on Heroku
-  2. Account creation/login as well as demo login
-  3. Production README.md
-  4. Songs
-  5. Annotations
-  6. Comments
-  7. Upvotes
+While using Dab Genius, users are able to:
+  0. Create an account / sign up or sign in with Facebook.
+  0. Upload lyrics and images for their favorite songs.
+  0. Create annotations on lyrics of existing songs that let the user express their interpretation of those lines.
+  0. Upvote and downvote annotations if they agree or disagree with it.
+  0. Comment on annotations.
+  0. Search for existing songs by title.
 
-## Documentation:
-* [Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Redux Structure][redux-structure]
-* [Sample State][sample-state]
+## Features & Implementation
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[redux-structure]: rdocs/edux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+#### Single Page Application
 
-## Implementation Timeline
+What does this mean? It means that when exploring throughout the application, there are never hard redirections or refreshes to the page in order to fetch new content to display to the user. This is all handled by the React Router; visiting different pages gives the router a variety of details about what to reveal to the user. This allows for seamless transitions for the user as he/she is navigating.
 
-### Phase 1: Backend server and front end user authentication established (2 days)
-**Objective**: Rails server up and running with functioning front end authentication
-  - [✓] New rails project
-  - [✓] `User` model/controller
-  - [✓] `Session` controller
-  - [✓] Backend authentication
-  - [✓] `StaticPages` controller and root view
-  - [✓] Webpack and `React`/`Redux` modules
-  - [✓] `APIUtil` for API interaction
-  - [✓] Redux cycle established for front end authentication
-  - [✓] Account creation/sign in established
-  - [✓] OAuth with Facebook
-  - [✓] Seed users
-  - [✓] Review Phase 1
+#### User Authentication
 
-### Phase 2: Create header/navigation and footer bars, homepage styling (1 day)
-**Objective**: Begin designing homepage layout with navigation bar and page coloring
-  - [✓] Navigation bar
-  - [✓] Logo
-  - [✓] Add search bar
-  - [✓] Links in footer
-  - [✓] About info
-  - [✓] Review phase 2
+In order to have access to the different features on Dab Genius, users must be logged in; they have two options when creating an account. The first, is the old fashioned username and password creation. This is handled in the Rails backend which utilizes the `BCrypt` gem; the gem creates a hashed version of the user's password, stored as a password digest, which ensures the safety of the user's account. Clicking on the `sign in` or `sign up` presents the user with a session form that utilizes modals.
 
-### Phase 3: Songs (1.5 days)
-**Objective**: Add songs to the database.
-  - [✓] `Song` model/controller
-  - [✓] Seed songs
-  - [✓] Song form
-  - [✓] File upload
-  - [✓] Styling
-  - [✓] Review phase 3
+Alternatively, users can also sign in with their Facebook credentials if they choose to use the Facebook OmniAuth path. Dab Genius extracts the user's name and saves it as the username for when users construct annotations and comments.
 
-### Phase 4: Annotations (2 days)
-**Objective**: Add ability to annotate songs.
-  - [✓] `Annotation` model/controller
-  - [✓] Seed annotations
-  - [✓] Annotation form
-  - [✓] onSelection listeners to lyrics
-  - [✓] Styling
-  - [✓] Review phase 4
+![signup]
 
-### Phase 5: Comments (1 day)
-**Objective**: Add ability to comment on annotations.
-  - [✓] `Comment` model/controller
-  - [✓] Seed comments
-  - [✓] Comments form
-  - [✓] Styling
-  - [✓] Review phase 5
+#### Songs
 
-### Phase 6: Votes (.5 day)
-**Objective**: Add ability to vote on annotations.
-  - [✓] `Vote` model/controller
-  - [✓] Vote buttons
-  - [✓] Review phase 6
+The database maintains all of its songs in a table which stores its `artist`, `title`, `lyrics`, and `author_id`. Users have the ability to upload new songs onto the website and attach a cover art with it. Images that users upload along with their lyrics maintained with the `Paperclip` gem which stores them via Amazon Web Services. `Figaro` is also used in order to store the necessary access keys to access those images. The homepage holds an index which allows the users to view all of songs in the database. Users also have the ability to search for a song by its title using the search bar located in the header.
 
-### Phase 7: Search bar (1 day)
-**Objective**: Add ability for users to search for songs based on title or artist.
-  - [✓] Fetching songs from search
-  - [✓] Dynamic search results
-  - [✓] Review phase 7
+_song search_
+
+```javascript
+  render() {
+    let songs = [];
+    let searchString = this.state.searchString.trim().toLowerCase();
+    if (searchString.length > 0) {
+      songs = this.props.songs.filter((song) => {
+        return song.title.toLowerCase().match(searchString);
+      });
+    }
+
+    return (
+      <div className="song-search">
+        <input className="search-input" type="text" value={this.state.searchString} onChange={this.updateSearch}
+          placeholder="Search for a song by title"/>
+        <ul>
+          {songs.map((song) => {
+            return(
+              <SongSearchItem song={song} onClick={this.clearSearch} key={song.id}/>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+```
+
+![homepage]
+
+#### Song Annotations
+
+In the back end, the database keeps track of annotations in a table that keeps track of the annotation's `id`, its `author_id` and its `song_id`. In order to create an annotation, the logged in user drags over the lyrics on the song's individual page and writes its `body`. After submission, the annotation is added to the database and is immediately accessible upon completion. Clicking on existing annotations renders the body which allows its users to begin commenting.
+
+![button-show]
+
+#### Annotation Comments
+
+After clicking on an annotation, the server fetches all of its associated comments. When viewing an annotation, the user is presented with a form that allows for commenting. Comments are added to the store and are instantly re-rendered onto the page. In the database, comments are stored in a table that links together its `author` and its `annotation`.
+
+![annotation-show]
+
+#### Annotation Votes
+
+Logged in users have the ability to upvote and downvote annotations by clicking on the _Dope_ and _Nope_ buttons respectively. In doing so, users can affect the scores, or `brain cells` indicated in the header. The number of `brain cells` a user has is determined by the number of annotations they create and the quality of those annotations as judged by other users. In the back end, the votes are maintained using Rails' `find_or_create_by` method that will find the user's existing vote on a particular annotation and update it, or create one if they had not voted on it previously. By doing this, the database ensures that a user cannot vote on a single annotation more than once, but can update his/her vote if there is a change of heart.
+
+[signup]: ./app/assets/images/signup.png
+[homepage]: ./app/assets/images/homepage.png
+[button-show]: ./app/assets/images/button-show.png
+[annotation-show]: ./app/assets/images/annotation-show.png

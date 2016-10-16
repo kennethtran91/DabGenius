@@ -11,10 +11,11 @@
   border: 1px solid #555;
 }
 
-.footer-links a {
+.footer-links * {
   padding: 0px 8px;
   border-right: 1px solid #999;
   height: inherit;
+  float: left;
 }
 
 .footer-links a:first-child {
