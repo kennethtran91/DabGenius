@@ -63,13 +63,14 @@ _song search_
     );
   }
 ```
-
+_song index on homepage_
 ![homepage]
 
 #### Song Annotations
 
 In the back end, the database keeps track of annotations in a table that keeps track of the annotation's `id`, its `author_id` and its `song_id`. In order to create an annotation, the logged in user drags over the lyrics on the song's individual page and writes its `body`. After submission, the annotation is added to the database and is immediately accessible upon completion. Clicking on existing annotations renders the body which allows its users to begin commenting.
 
+_annotation button on lyrics selection_
 ![button-show]
 
 #### Annotation Comments
