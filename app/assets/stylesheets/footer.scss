@@ -2,16 +2,18 @@
   background-color: #797777;
   color: #ccc;
   font-family: 'Poppins', sans-serif;
-  margin: 0 auto;
+  height: 35px;
+  position: relative;
 }
 
 .footer-nav {
-  margin: 0 auto;
   text-align: center;
   border: 1px solid #555;
+  position: absolute;
+  left: 45%;
 }
 
-.footer-links * {
+.footer-links a {
   padding: 0px 8px;
   border-right: 1px solid #999;
   height: inherit;

@@ -17,11 +17,11 @@ class SongDetail extends React.Component {
   componentDidMount() {
     this.props.requestOneSong(this.props.params.songId);
     this.props.requestAllAnnotations(this.props.params.songId);
-    window.scrollTo(0,0); // scrolls to the bottom?
+    window.scrollTo(0,0); // scrolls to the top
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.params.songId != this.props.params.songId) {
+    if (newProps.params.songId !== this.props.params.songId) {
       this.props.requestOneSong(newProps.params.songId);
       this.props.requestAllAnnotations(newProps.params.songId);
     }
@@ -60,10 +60,6 @@ class SongDetail extends React.Component {
   resetState() {
     this.setState({showStatus: "", startIndex: 0, endIndex: 0,
     lyrics: "", selectedAnnotationId: null, annotationButtonPosition: null});
-  }
-
-  dummyFunction() {
-
   }
 
   showAnnotationButton(e) {
@@ -124,7 +120,7 @@ class SongDetail extends React.Component {
       }) || {} ;
       return (
         <section className="song-detail-container group">
-          <div className="song-banner">
+          <div className="song-banner" onClick={this.resetState}>
             <img className="zoomed-banner" src={this.props.song.image_url}></img>
             <div className="banner-info">
               <h2 className="song-title">
@@ -146,7 +142,7 @@ class SongDetail extends React.Component {
             </div>
           </section>
 
-          <section className="annotation-container">
+          <section className="annotation-container" onClick={this.resetState}>
             <AnnotationContainer
               showStatus={this.state.showStatus}
               songId={this.props.song.id}

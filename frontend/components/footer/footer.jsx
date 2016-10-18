@@ -14,9 +14,6 @@ class Footer extends React.Component {
               <a href="https://github.com/jd479/DabGenius">
                 <img src={window.github} className="github-logo"/></a>
             </li>
-            <li>
-              <p>By Jeffrey Du</p>
-            </li>
           </ul>
         </nav>
       </footer>
