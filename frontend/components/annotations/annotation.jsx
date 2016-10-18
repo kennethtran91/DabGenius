@@ -2,6 +2,8 @@ import React from 'react';
 import CommentFormContainer from '../comments/comment_form_container';
 import Comment from '../comments/comment';
 import TimeAgo from 'react-timeago';
+import { withRouter } from 'react-router';
+import SessionModal from '../modal/session_modal';
 
 class Annotation extends React.Component{
   constructor(props) {
@@ -15,7 +17,12 @@ class Annotation extends React.Component{
 
   openForm(e) {
     e.preventDefault();
-    this.props.setAnnotationStatus("form");
+    if (this.props.currentUser) {
+      this.props.setAnnotationStatus("form");
+    } else {
+      this.props.router.push("/");
+      window.scrollTo(0, 0);
+    }
   }
 
   handleCancel(e) {
@@ -140,4 +147,4 @@ class Annotation extends React.Component{
   }
 }
 
-export default Annotation;
+export default withRouter(Annotation);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import SongSearchItem from './song_search_item';
 
 class SongsSearch extends React.Component {
