@@ -142,7 +142,7 @@ class SongDetail extends React.Component {
             </div>
           </section>
 
-          <section className="annotation-container" onClick={this.resetState}>
+          <section className="annotation-container">
             <AnnotationContainer
               showStatus={this.state.showStatus}
               songId={this.props.song.id}
