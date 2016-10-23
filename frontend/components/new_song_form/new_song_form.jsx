@@ -50,22 +50,12 @@ class NewSongForm extends React.Component {
 
   render () {
 
-    let errors = null;
-    if (this.props.errors.length > 0) {
-      errors = this.props.errors.map((error, i) => {
-        return <li key={`error-${i}`}>{error}</li>;
-      });
-    }
-
     return (
       <section className="new-song-form-container">
         <form onSubmit={this.handleSubmit} className="new-song-form">
           <h2 className="new-song-header">Create a new song!</h2>
           <h3>Primary info (image optional but recommended)</h3>
           <hr/>
-          <ul className="song-form-error">
-            {errors}
-          </ul>
           <label className="new-song-form-label">BY
             <br/>
             <input onChange={this.update("artist")}
