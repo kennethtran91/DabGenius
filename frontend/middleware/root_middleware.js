@@ -9,7 +9,7 @@ const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   SongsMiddleware,
   AnnotationMiddleware,
-  CommentMiddleware
+  CommentMiddleware,
   // createLogger()
 );
 

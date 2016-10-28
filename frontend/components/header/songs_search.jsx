@@ -22,14 +22,14 @@ class SongsSearch extends React.Component {
     let searchString = this.state.searchString.trim().toLowerCase();
     if (searchString.length > 0) {
       songs = this.props.songs.filter((song) => {
-        return song.title.toLowerCase().match(searchString);
+        return song.title.toLowerCase().match(searchString) || song.artist.toLowerCase().match(searchString);
       });
     }
 
     return (
       <div className="song-search">
         <input className="search-input" type="text" value={this.state.searchString} onChange={this.updateSearch}
-          placeholder="Search for a song by title"/>
+          placeholder="Search for a song!"/>
         <ul>
           {songs.map((song) => {
             return(
