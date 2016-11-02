@@ -3,6 +3,7 @@ export const LOGOUT = 'LOGOUT';
 export const SIGNUP = 'SIGNUP';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const REQUEST_CURRENT_USER = 'REQUEST_CURRENT_USER';
 
 export const login = (user, callback) => {
   return {
@@ -25,6 +26,11 @@ export const signup = (user, callback) => {
     callback
   };
 };
+
+export const requestCurrentUser = (id) => ({
+  type: REQUEST_CURRENT_USER,
+  id
+});
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,

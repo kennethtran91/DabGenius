@@ -1,8 +1,6 @@
 import { CREATE_ANNOTATION, addNewAnnotation, REQUEST_ALL_ANNOTATIONS, receiveAllAnnotations, REQUEST_ONE_ANNOTATION, receiveOneAnnotation,
 UPVOTE_ANNOTATION, DOWNVOTE_ANNOTATION, updateAnnotation } from '../actions/annotation_actions';
-import { receiveCurrentUser } from '../actions/session_actions';
 import * as API from '../util/annotation_api_util';
-// import * as SessionAPI from '../util/session_api_util';
 
 const AnnotationMiddleware = ({ getState, dispatch }) => next => action => {
   let successCallback;

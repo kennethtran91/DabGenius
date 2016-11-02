@@ -26,3 +26,11 @@ export const logout = (success, error) => {
     error
   });
 };
+
+export const requestCurrentUser = (id, success) => {
+  $.ajax({
+    url: `api/users/${id}`,
+    method: 'GET',
+    success
+  });
+};
