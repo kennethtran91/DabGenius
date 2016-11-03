@@ -66,7 +66,7 @@ class Annotation extends React.Component{
         return (
           <div style={style} className="annotation-form group">
             <textarea className="annotation-textarea"
-              placeholder="Annotation away!"
+              placeholder="Annotate away!"
               onChange={this.updateBody}/>
             <br/>
             <div className="form-buttons">

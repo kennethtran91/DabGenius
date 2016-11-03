@@ -58,6 +58,7 @@
   border-left: 5px solid #99a7ee;
   padding-left: 20px;
   font-family: 'Lato', sans-serif;
+  width: 300px;
 }
 
 .annotation-author {
@@ -74,6 +75,10 @@
   float: left;
   margin: 0 3px;
   border: 3px solid #0c0;
+}
+
+.annotation-body {
+  word-wrap: break-word;
 }
 
 .annotation-score {
