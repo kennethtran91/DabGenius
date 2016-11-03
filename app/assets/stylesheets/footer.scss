@@ -1,6 +1,6 @@
 .footer {
   background-color: #797777;
-  color: #ccc;
+  color: black;
   font-family: 'Poppins', sans-serif;
   height: 35px;
   position: relative;
@@ -8,23 +8,25 @@
 
 .footer-nav {
   text-align: center;
-  border: 1px solid #555;
+  // border: 1px solid #555;
   position: absolute;
-  left: 45%;
+  left: 40%;
 }
 
 .footer-links a {
-  padding: 0px 8px;
-  border-right: 1px solid #999;
+  padding: 2.5px 10px;
+  border-right: 1px solid black;
   height: inherit;
   float: left;
+  vertical-align: middle;
 }
 
 .footer-links a:first-child {
-  border-left: 1px solid #999;
+  border-left: 1px solid black;
 }
 
 .github-logo {
   width: 100px;
-  vertical-align: middle;
+  height: 30px;
+  // vertical-align: middle;
 }
