@@ -68,7 +68,9 @@ export default class SongsIndex extends React.Component {
                   <a href="https://www.youtube.com/watch?v=hD9jw2J5Sbg" target="_blank">
                     <img className="dab" src={window.dabEmoji}></img>
                   </a>
-                  Dab genius is a web application that allows its users to annotate their favorite songs. All you have to do is sign up to get started. Not sure what a dab is? Click him to find out!
+                  Dab genius is a web application that allows its users to annotate their favorite songs.
+                  All you have to do is sign up to get started; to annotate, just highlight over the desired lyrics.
+                  Not sure what a dab is? Click him to find out!
                 </p>
               </section>
               <h3 className="fire">What's hot?</h3>
