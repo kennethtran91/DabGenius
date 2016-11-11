@@ -4,13 +4,13 @@
   font-family: 'Poppins', sans-serif;
   height: 35px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-nav {
   text-align: center;
-  // border: 1px solid #555;
   position: absolute;
-  left: 40%;
 }
 
 .footer-links a {
@@ -28,5 +28,4 @@
 .github-logo {
   width: 100px;
   height: 30px;
-  // vertical-align: middle;
 }
