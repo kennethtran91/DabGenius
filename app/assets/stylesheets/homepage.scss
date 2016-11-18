@@ -2,6 +2,7 @@
   background-color: #000;
   color: #aaa;
   font-family: 'Quicksand', sans-serif;
+  // display: flex;
 }
 
 .right-column {
@@ -9,6 +10,10 @@
   margin: 40px;
   margin-right: 4%;
   width: 600px;
+  // display: flex;
+  // flex-direction: column;
+  // width: 66%;
+  // height: 100%;
 }
 
 .about-container {
@@ -33,6 +38,10 @@
   float: left;
   margin: 40px;
   margin-left: 10%;
+  // display: flex;
+  // flex-direction: column;
+  // width: 33%;
+  // height: 100%;
 }
 
 .song-index-item {
