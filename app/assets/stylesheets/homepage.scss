@@ -2,13 +2,16 @@
   background-color: #000;
   color: #aaa;
   font-family: 'Quicksand', sans-serif;
-  // display: flex;
+  display: flex;
+  flex-direction: row;
 }
 
 .right-column {
-  float: right;
-  margin: 40px;
-  margin-right: 4%;
+  display: flex;
+  // float: right;
+  order: 2;
+  // margin: 40px;
+  // margin-right: 4%;
   width: 600px;
   // display: flex;
   // flex-direction: column;
@@ -19,12 +22,10 @@
 .about-container {
   border: 1px solid #ccc;
   color: #aaa;
+  padding: 4px;
+  margin-top: 80px;
   width: 500px;
   height: 100px;
-  padding: 10px;
-  float: right;
-  margin: 40px;
-  margin-right: 9%;
   vertical-align: middle;
 }
 
@@ -34,8 +35,13 @@
   height: 100px;
 }
 
+.song-index {
+  display: flex;
+}
+
 .left-column {
-  float: left;
+  // float: left;
+  order: 1;
   margin: 40px;
   margin-left: 10%;
   // display: flex;
@@ -70,22 +76,18 @@
 }
 
 .add-song-link-container {
-  position: absolute;
-  left: 50%;
+  // position: absolute;
+  // left: 50%;
 }
 
 .add-song-link {
-  position: relative;
-  right: 50%;
+  // position: relative;
+  // right: 50%;
   white-space: nowrap;
 }
 
 .add-song-link:hover {
   color: cornflowerblue;
-}
-
-.featured-songs {
-  float: left;
 }
 
 .featured-desc {
@@ -115,8 +117,7 @@
 }
 
 .other-songs {
-  float: right;
-  margin-right: 10%;
+  order: 2;
 }
 
 .wide-song {
