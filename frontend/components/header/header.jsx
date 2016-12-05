@@ -13,8 +13,7 @@ class Header extends React.Component {
     if (this.props.currentUser) {
         greeting = (
           <div className="right-side-content">
-            <div className="user-greeting"> Welcome {this.props.currentUser.username}
-              ({this.props.currentUser.score}  brain cells)
+            <div className="user-greeting"> Welcome {this.props.currentUser.username} ({this.props.currentUser.score}  brain cells)
             </div>
             <button className="logout-button"
               onClick={this.props.logout}>log out
