@@ -1,6 +1,7 @@
 import React from 'react';
 import SongsIndexItem from './songs_index_item';
 import shuffle from 'shuffle-array';
+import { Link } from 'react-router';
 
 export default class SongsIndex extends React.Component {
   constructor(props) {
@@ -60,7 +61,9 @@ export default class SongsIndex extends React.Component {
               {featuredSongs}
             </ul>
           </section>
-
+          <div className="add-song-link-container">
+            <Link className="add-song-link" to="/songs/new">ADD NEW SONG</Link>
+          </div>
           <section className=" right-column">
             <ul className="other-songs group">
               <section className="about-container group">
