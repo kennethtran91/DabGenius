@@ -31,10 +31,10 @@ module DabGenius
     config.paperclip_defaults = {
       storage: :s3,
       s3_credentials: {
-        bucket: ENV['s3_bucket'],
-        access_key_id: ENV['s3_access_key_id'],
-        secret_access_key: ENV['s3_secret_access_key'],
-        :s3_region => ENV["s3_region"]
+        bucket: ENV['vailon'],
+        access_key_id: ENV['AKIAJX6W6UC525FQTTRQ'],
+        secret_access_key: ENV['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'],
+        :s3_region => ENV["us-east-1"]
       }
     }
     # Do not swallow errors in after_commit/after_rollback callbacks.
